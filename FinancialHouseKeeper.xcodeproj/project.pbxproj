@@ -20,6 +20,7 @@
 		245B4F891BBA53E000C53CC3 /* BankCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B4F881BBA53E000C53CC3 /* BankCardViewController.m */; };
 		245B4F8D1BBA56BF00C53CC3 /* FinConsultionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B4F8C1BBA56BF00C53CC3 /* FinConsultionViewController.m */; };
 		245B4F911BBA97F800C53CC3 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B4F901BBA97F800C53CC3 /* UserModel.m */; };
+		247E3BE41BBBA35300829561 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 247E3BE31BBBA35300829561 /* LoginView.m */; };
 		248790911BB9228700B9E930 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 248790901BB9228700B9E930 /* main.m */; };
 		248790941BB9228700B9E930 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 248790931BB9228700B9E930 /* AppDelegate.m */; };
 		248790971BB9228700B9E930 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 248790961BB9228700B9E930 /* ViewController.m */; };
@@ -561,6 +562,8 @@
 		245B4F8C1BBA56BF00C53CC3 /* FinConsultionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinConsultionViewController.m; sourceTree = "<group>"; };
 		245B4F8F1BBA97F800C53CC3 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		245B4F901BBA97F800C53CC3 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		247E3BE21BBBA35300829561 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		247E3BE31BBBA35300829561 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
 		2487908B1BB9228700B9E930 /* FinancialHouseKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancialHouseKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2487908F1BB9228700B9E930 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		248790901BB9228700B9E930 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1145,6 +1148,16 @@
 			path = userModel;
 			sourceTree = "<group>";
 		};
+		247E3BE11BBBA35300829561 /* 登录 */ = {
+			isa = PBXGroup;
+			children = (
+				247E3BE21BBBA35300829561 /* LoginView.h */,
+				247E3BE31BBBA35300829561 /* LoginView.m */,
+			);
+			name = "登录";
+			path = "金融资讯/登录";
+			sourceTree = "<group>";
+		};
 		248790821BB9228700B9E930 = {
 			isa = PBXGroup;
 			children = (
@@ -1705,15 +1718,14 @@
 		248790B71BB926AF00B9E930 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				247E3BE11BBBA35300829561 /* 登录 */,
 				245B4F8A1BBA56BF00C53CC3 /* 金融资讯 */,
 				248790B81BB926AF00B9E930 /* 业务咨询 */,
 				248790B91BB926AF00B9E930 /* 代理产品 */,
 				248790BA1BB926AF00B9E930 /* 我的网银 */,
 				248790BB1BB926AF00B9E930 /* 日程提醒 */,
 				248790BC1BB926AF00B9E930 /* 活动交流 */,
-				248790BD1BB926AF00B9E930 /* 版本 */,
 				248790BE1BB926AF00B9E930 /* 理财服务 */,
-				248790BF1BB926AF00B9E930 /* 登录 */,
 				248790C01BB926AF00B9E930 /* 缴费服务 */,
 				248790C11BB926AF00B9E930 /* 设置 */,
 				248790C31BB926AF00B9E930 /* 银行卡 */,
@@ -1767,13 +1779,6 @@
 			path = "活动交流";
 			sourceTree = "<group>";
 		};
-		248790BD1BB926AF00B9E930 /* 版本 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "版本";
-			sourceTree = "<group>";
-		};
 		248790BE1BB926AF00B9E930 /* 理财服务 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1781,13 +1786,6 @@
 				245B4F771BBA534000C53CC3 /* MonServiceViewController.m */,
 			);
 			path = "理财服务";
-			sourceTree = "<group>";
-		};
-		248790BF1BB926AF00B9E930 /* 登录 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "登录";
 			sourceTree = "<group>";
 		};
 		248790C01BB926AF00B9E930 /* 缴费服务 */ = {
@@ -2555,6 +2553,7 @@
 				245B4F691BBA52AD00C53CC3 /* BusConsultionViewController.m in Sources */,
 				2487947E1BB92FCF00B9E930 /* ListTableViewCell.m in Sources */,
 				245B4F6C1BBA52C300C53CC3 /* DelProducyViewController.m in Sources */,
+				247E3BE41BBBA35300829561 /* LoginView.m in Sources */,
 				2487947A1BB92D7D00B9E930 /* LockerViewController.m in Sources */,
 				248794C41BB9413900B9E930 /* GDataXMLNode.m in Sources */,
 				248794E81BB949A300B9E930 /* VCManager.m in Sources */,
