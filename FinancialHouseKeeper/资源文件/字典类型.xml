@@ -1,0 +1,272 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>uaer</Author>
+  <LastAuthor>政 王</LastAuthor>
+  <Created>2012-12-21T02:29:54Z</Created>
+  <LastSaved>2012-12-21T02:30:43Z</LastSaved>
+  <Version>14.0</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>3340</WindowHeight>
+  <WindowWidth>11780</WindowWidth>
+  <WindowTopX>360</WindowTopX>
+  <WindowTopY>80</WindowTopY>
+  <TabRatio>600</TabRatio>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Center"/>
+   <Borders/>
+   <Font ss:FontName="宋体" x:CharSet="134" x:Family="Swiss" ss:Size="11"
+    ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Sheet1">
+  <Table ss:ExpandedColumnCount="3" ss:ExpandedRowCount="42" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="53" ss:DefaultRowHeight="14">
+   <Column ss:AutoFitWidth="0" ss:Width="175"/>
+   <Column ss:AutoFitWidth="0" ss:Width="171"/>
+   <Column ss:AutoFitWidth="0" ss:Width="28"/>
+   <Row>
+    <Cell><Data ss:Type="String">风险等级</Data></Cell>
+    <Cell><Data ss:Type="String">riskLevel</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">电子银行类型</Data></Cell>
+    <Cell><Data ss:Type="String">ebankType</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">交易审核状态</Data></Cell>
+    <Cell><Data ss:Type="String">exchAuditStatus</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">币种</Data></Cell>
+    <Cell><Data ss:Type="String">currencyType</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">证件类型</Data></Cell>
+    <Cell><Data ss:Type="String">cerType</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">客户类型</Data></Cell>
+    <Cell><Data ss:Type="String">custType</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">卡类型</Data></Cell>
+    <Cell><Data ss:Type="String">cardType</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">卡种</Data></Cell>
+    <Cell><Data ss:Type="String">cardBin</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">发行模式</Data></Cell>
+    <Cell><Data ss:Type="String">distMode</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">黄金类型</Data></Cell>
+    <Cell><Data ss:Type="String">goldType</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">条码缴费类型</Data></Cell>
+    <Cell><Data ss:Type="String">customType</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">车牌类型</Data></Cell>
+    <Cell><Data ss:Type="String">plateType</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">基金状态</Data></Cell>
+    <Cell><Data ss:Type="String">fundStatus</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">基金过户代理地点</Data></Cell>
+    <Cell><Data ss:Type="String">fundTranAgentLoca</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">转换开通标志</Data></Cell>
+    <Cell><Data ss:Type="String">ConvertOpenSign</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">基金种类</Data></Cell>
+    <Cell><Data ss:Type="String">fundType</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">钞汇标志</Data></Cell>
+    <Cell><Data ss:Type="String">exchOrBank</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">风险类型</Data></Cell>
+    <Cell><Data ss:Type="String">ristType</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">产品类型</Data></Cell>
+    <Cell><Data ss:Type="String">proType</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">是否标识</Data></Cell>
+    <Cell><Data ss:Type="String">yesOrNo</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">产品审核状态</Data></Cell>
+    <Cell><Data ss:Type="String">auditStatus</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">发行方式</Data></Cell>
+    <Cell><Data ss:Type="String">issuingMode</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">是否允许标识</Data></Cell>
+    <Cell><Data ss:Type="String">whetherAllow</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">产品分红方式</Data></Cell>
+    <Cell><Data ss:Type="String">dividendsWay</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">默认分红方式</Data></Cell>
+    <Cell><Data ss:Type="String">defauDivWay</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">产品费用收取方式</Data></Cell>
+    <Cell><Data ss:Type="String">proCustomType</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">默认费用收取方式</Data></Cell>
+    <Cell><Data ss:Type="String">defauCustomType</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">婚姻状况</Data></Cell>
+    <Cell><Data ss:Type="String">mrtlstat</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">客户状态</Data></Cell>
+    <Cell><Data ss:Type="String">custStatus</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">工作单位性质</Data></Cell>
+    <Cell><Data ss:Type="String">unitNature</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">职业</Data></Cell>
+    <Cell><Data ss:Type="String">jobType</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">学历</Data></Cell>
+    <Cell><Data ss:Type="String">eduLevel</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">收费模式</Data></Cell>
+    <Cell><Data ss:Type="String">costType</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">转换托管开通模式</Data></Cell>
+    <Cell><Data ss:Type="String">stdypak1Type</Data></Cell>
+    <Cell><Data ss:Type="Number">1</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">后端赎回标识 </Data></Cell>
+    <Cell><Data ss:Type="String">redemodType</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">理财币种</Data></Cell>
+    <Cell><Data ss:Type="String">financiCurrency</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">首页模板</Data></Cell>
+    <Cell><Data ss:Type="String">homeTemplate</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">贵金属类型</Data></Cell>
+    <Cell><Data ss:Type="String">preciousMetalType</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">贵金属规格</Data></Cell>
+    <Cell><Data ss:Type="String">preciousMetalNorms</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">产品详情模板</Data></Cell>
+    <Cell><Data ss:Type="String">desTemplateType</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">产品列表模板</Data></Cell>
+    <Cell><Data ss:Type="String">proListTempType</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">性别标识</Data></Cell>
+    <Cell><Data ss:Type="String">sexType</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">保险产品类型</Data></Cell>
+    <Cell><Data ss:Type="String">insuType</Data></Cell>
+    </Row>
+    <Row>
+    <Cell><Data ss:Type="String">险种细分种类</Data></Cell>
+    <Cell><Data ss:Type="String">insuSubType</Data></Cell>
+    </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <PageLayoutZoom>0</PageLayoutZoom>
+   <Selected/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <RangeSelection>R1C1:R42C3</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet2">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="53" ss:DefaultRowHeight="14">
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <PageLayoutZoom>0</PageLayoutZoom>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+ <Worksheet ss:Name="Sheet3">
+  <Table ss:ExpandedColumnCount="1" ss:ExpandedRowCount="1" x:FullColumns="1"
+   x:FullRows="1" ss:DefaultColumnWidth="53" ss:DefaultRowHeight="14">
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.75" x:Left="0.7" x:Right="0.7" x:Top="0.75"/>
+   </PageSetup>
+   <PageLayoutZoom>0</PageLayoutZoom>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>
