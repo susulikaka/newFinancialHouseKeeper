@@ -10,10 +10,11 @@
 #import "ListTableViewCell.h"
 #import "FunctionList.h"
 #import "HomePageViewController.h"
+#import "StartView.h"
 
 static CGFloat closeWidth = 60;
 static CGFloat openWidth = 225;
-static CGFloat PAGE_FRAME = SCREEN_HEIGHT - 30;
+static CGFloat PAGE_FRAME = SCREEN_HEIGHT - 20;
 
 static NSString * KListTableViewCellId = @"KListTableViewCellId";
 static NSString * KListTableHeadId = @"KListTableHeadId";
@@ -32,6 +33,8 @@ static NSString * KListTableFootId = @"KListTableFootId";
 @property(nonatomic,strong) NSArray                 * allVCArr;/** < 所有的视图控制器名字 */
 @property(nonatomic,strong) NSArray                 * beAllVCArr;/** < 登录前的视图控制器名字 */
 @property(nonatomic,strong) UITapGestureRecognizer * tapGesture;/** < 点击手势 */
+
+@property (nonatomic, strong) StartView *startView; /**< 启动页 */
 
 /** < 尾部视图 */
 @property(nonatomic,strong) UIButton                * configBtn;/** < 设置按钮 */
@@ -97,6 +100,8 @@ static NSString * KListTableFootId = @"KListTableFootId";
 
     [self.cur_vc.view addGestureRecognizer:self.tapGesture];
     [self.view addGestureRecognizer:self.gesture];
+    
+    [self.view addSubview:self.startView];
 }
 
 #pragma mark - action
@@ -381,6 +386,13 @@ static NSString * KListTableFootId = @"KListTableFootId";
         });
     }
     return _verBtn;
+}
+
+- (StartView *)startView {
+    if (!_startView) {
+        _startView = [[StartView alloc] initWithFrame:CGRectMake(0, 0, 768, 1024)];
+    }
+    return _startView;
 }
 
 @end

@@ -16,7 +16,6 @@
 		245B4F7A1BBA536000C53CC3 /* 背景.png in Resources */ = {isa = PBXBuildFile; fileRef = 245B4F791BBA536000C53CC3 /* 背景.png */; };
 		245B4F7D1BBA537A00C53CC3 /* PayServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B4F7C1BBA537A00C53CC3 /* PayServiceViewController.m */; };
 		245B4F801BBA538300C53CC3 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B4F7F1BBA538300C53CC3 /* ConfigViewController.m */; };
-		245B4F861BBA53A800C53CC3 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B4F851BBA53A800C53CC3 /* HomePageViewController.m */; };
 		245B4F891BBA53E000C53CC3 /* BankCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B4F881BBA53E000C53CC3 /* BankCardViewController.m */; };
 		245B4F8D1BBA56BF00C53CC3 /* FinConsultionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B4F8C1BBA56BF00C53CC3 /* FinConsultionViewController.m */; };
 		245B4F911BBA97F800C53CC3 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B4F901BBA97F800C53CC3 /* UserModel.m */; };
@@ -524,6 +523,11 @@
 		248794DC1BB9424B00B9E930 /* Parse.m in Sources */ = {isa = PBXBuildFile; fileRef = 248794DA1BB9424B00B9E930 /* Parse.m */; };
 		248794E81BB949A300B9E930 /* VCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 248794E71BB949A300B9E930 /* VCManager.m */; };
 		24B988201BBA2DCE00C55EF9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B9881F1BBA2DCE00C55EF9 /* BaseViewController.m */; };
+		24E903061BC60097003999B6 /* StartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E903051BC60097003999B6 /* StartView.m */; };
+		24E903091BC609FF003999B6 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E903081BC609FF003999B6 /* HomePageViewController.m */; };
+		24E903101BC60B3C003999B6 /* NetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9030C1BC60B3C003999B6 /* NetworkingManager.m */; };
+		24E903111BC60B3C003999B6 /* NetworkingManager+HomeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9030F1BC60B3C003999B6 /* NetworkingManager+HomeRequest.m */; };
+		24E903141BC60BE2003999B6 /* XmlParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E903131BC60BE2003999B6 /* XmlParse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -554,8 +558,6 @@
 		245B4F7C1BBA537A00C53CC3 /* PayServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayServiceViewController.m; sourceTree = "<group>"; };
 		245B4F7E1BBA538300C53CC3 /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
 		245B4F7F1BBA538300C53CC3 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
-		245B4F841BBA53A800C53CC3 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
-		245B4F851BBA53A800C53CC3 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
 		245B4F871BBA53E000C53CC3 /* BankCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCardViewController.h; sourceTree = "<group>"; };
 		245B4F881BBA53E000C53CC3 /* BankCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCardViewController.m; sourceTree = "<group>"; };
 		245B4F8B1BBA56BF00C53CC3 /* FinConsultionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinConsultionViewController.h; sourceTree = "<group>"; };
@@ -1110,6 +1112,16 @@
 		248794E71BB949A300B9E930 /* VCManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCManager.m; sourceTree = "<group>"; };
 		24B9881E1BBA2DCE00C55EF9 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		24B9881F1BBA2DCE00C55EF9 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		24E903041BC60097003999B6 /* StartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartView.h; sourceTree = "<group>"; };
+		24E903051BC60097003999B6 /* StartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartView.m; sourceTree = "<group>"; };
+		24E903071BC609FF003999B6 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
+		24E903081BC609FF003999B6 /* HomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
+		24E9030B1BC60B3C003999B6 /* NetworkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingManager.h; sourceTree = "<group>"; };
+		24E9030C1BC60B3C003999B6 /* NetworkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkingManager.m; sourceTree = "<group>"; };
+		24E9030E1BC60B3C003999B6 /* NetworkingManager+HomeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NetworkingManager+HomeRequest.h"; sourceTree = "<group>"; };
+		24E9030F1BC60B3C003999B6 /* NetworkingManager+HomeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NetworkingManager+HomeRequest.m"; sourceTree = "<group>"; };
+		24E903121BC60BE2003999B6 /* XmlParse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XmlParse.h; sourceTree = "<group>"; };
+		24E903131BC60BE2003999B6 /* XmlParse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XmlParse.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1706,6 +1718,7 @@
 		248790B61BB926AF00B9E930 /* 自定义工具包 */ = {
 			isa = PBXGroup;
 			children = (
+				24E9030A1BC60B3C003999B6 /* 胖哥网络请求 */,
 				245B4F8E1BBA97E900C53CC3 /* userModel */,
 				24B9881D1BBA2DCE00C55EF9 /* page控制器 */,
 				248794D51BB941AC00B9E930 /* networkRequest */,
@@ -1718,6 +1731,7 @@
 		248790B71BB926AF00B9E930 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				24E903031BC60035003999B6 /* 启动页 */,
 				247E3BE11BBBA35300829561 /* 登录 */,
 				245B4F8A1BBA56BF00C53CC3 /* 金融资讯 */,
 				248790B81BB926AF00B9E930 /* 业务咨询 */,
@@ -1818,8 +1832,8 @@
 		248790C41BB926AF00B9E930 /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
-				245B4F841BBA53A800C53CC3 /* HomePageViewController.h */,
-				245B4F851BBA53A800C53CC3 /* HomePageViewController.m */,
+				24E903071BC609FF003999B6 /* HomePageViewController.h */,
+				24E903081BC609FF003999B6 /* HomePageViewController.m */,
 			);
 			path = "首页";
 			sourceTree = "<group>";
@@ -1964,6 +1978,37 @@
 				24B9881F1BBA2DCE00C55EF9 /* BaseViewController.m */,
 			);
 			path = "page控制器";
+			sourceTree = "<group>";
+		};
+		24E903031BC60035003999B6 /* 启动页 */ = {
+			isa = PBXGroup;
+			children = (
+				24E903041BC60097003999B6 /* StartView.h */,
+				24E903051BC60097003999B6 /* StartView.m */,
+			);
+			name = "启动页";
+			path = "首页/启动页";
+			sourceTree = "<group>";
+		};
+		24E9030A1BC60B3C003999B6 /* 胖哥网络请求 */ = {
+			isa = PBXGroup;
+			children = (
+				24E903121BC60BE2003999B6 /* XmlParse.h */,
+				24E903131BC60BE2003999B6 /* XmlParse.m */,
+				24E9030B1BC60B3C003999B6 /* NetworkingManager.h */,
+				24E9030C1BC60B3C003999B6 /* NetworkingManager.m */,
+				24E9030D1BC60B3C003999B6 /* 首页请求 */,
+			);
+			path = "胖哥网络请求";
+			sourceTree = "<group>";
+		};
+		24E9030D1BC60B3C003999B6 /* 首页请求 */ = {
+			isa = PBXGroup;
+			children = (
+				24E9030E1BC60B3C003999B6 /* NetworkingManager+HomeRequest.h */,
+				24E9030F1BC60B3C003999B6 /* NetworkingManager+HomeRequest.m */,
+			);
+			path = "首页请求";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2532,12 +2577,16 @@
 			files = (
 				248794CA1BB9413900B9E930 /* SDWebImageDownloader.m in Sources */,
 				24B988201BBA2DCE00C55EF9 /* BaseViewController.m in Sources */,
+				24E903101BC60B3C003999B6 /* NetworkingManager.m in Sources */,
+				24E903141BC60BE2003999B6 /* XmlParse.m in Sources */,
 				245B4F8D1BBA56BF00C53CC3 /* FinConsultionViewController.m in Sources */,
 				248794C21BB9413900B9E930 /* AFURLSessionManager.m in Sources */,
 				248790971BB9228700B9E930 /* ViewController.m in Sources */,
 				245B4F751BBA532700C53CC3 /* ActiComunicationViewController.m in Sources */,
 				248794CD1BB9413900B9E930 /* SDWebImagePrefetcher.m in Sources */,
 				248794D41BB9413900B9E930 /* UIView+WebCacheOperation.m in Sources */,
+				24E903091BC609FF003999B6 /* HomePageViewController.m in Sources */,
+				24E903111BC60B3C003999B6 /* NetworkingManager+HomeRequest.m in Sources */,
 				248790941BB9228700B9E930 /* AppDelegate.m in Sources */,
 				248794BD1BB9413900B9E930 /* AFNetworkReachabilityManager.m in Sources */,
 				248794D01BB9413900B9E930 /* UIImage+MultiFormat.m in Sources */,
@@ -2545,10 +2594,10 @@
 				248794D11BB9413900B9E930 /* UIImage+WebP.m in Sources */,
 				248794751BB92D2D00B9E930 /* FunctionList.m in Sources */,
 				248794BF1BB9413900B9E930 /* AFURLConnectionOperation.m in Sources */,
-				245B4F861BBA53A800C53CC3 /* HomePageViewController.m in Sources */,
 				248794D31BB9413900B9E930 /* UIImageView+WebCache.m in Sources */,
 				248794BC1BB9413900B9E930 /* AFHTTPSessionManager.m in Sources */,
 				245B4F721BBA52FC00C53CC3 /* ScheAlertViewController.m in Sources */,
+				24E903061BC60097003999B6 /* StartView.m in Sources */,
 				248794C01BB9413900B9E930 /* AFURLRequestSerialization.m in Sources */,
 				245B4F691BBA52AD00C53CC3 /* BusConsultionViewController.m in Sources */,
 				2487947E1BB92FCF00B9E930 /* ListTableViewCell.m in Sources */,

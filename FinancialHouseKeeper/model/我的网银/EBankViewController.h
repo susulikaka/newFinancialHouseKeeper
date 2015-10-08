@@ -1,9 +1,9 @@
 //
-//  EBankViewController.h
-//  FinancialHouseKeeper
+//  hhViewController.h
+//  BaseViewController
 //
 //  Created by rimi on 15/9/29.
-//  Copyright (c) 2015年 lili. All rights reserved.
+//  Copyright (c) 2015年 赖星果. All rights reserved.
 //
 
 #import "BaseViewController.h"
