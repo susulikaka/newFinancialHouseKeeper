@@ -114,6 +114,8 @@ static NSString * KListTableFootId = @"KListTableFootId";
 
     [self.cur_vc.view addGestureRecognizer:self.tapGesture];
     [self.view addGestureRecognizer:self.gesture];
+    //添加点击事件
+    [self.loginBtn addTarget:self action:@selector(action_login) forControlEvents:UIControlEventTouchUpInside];
     
     
     //添加点击事件
