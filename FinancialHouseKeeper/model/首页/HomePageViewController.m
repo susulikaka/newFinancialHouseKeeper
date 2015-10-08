@@ -59,10 +59,6 @@
     [self.view addSubview:self.bankEvent];
 }
 #pragma mark - life cycle
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [self initializeDataSoure];
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initializeDataSoure];

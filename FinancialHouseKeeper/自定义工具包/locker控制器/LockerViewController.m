@@ -69,6 +69,8 @@ static NSString * KListTableFootId = @"KListTableFootId";
     self.cur_vc = self.home_vc;/** < 默认当前页面为首页 */
     self.curRow = 0;/** < 默认当前点击为第0行 */
     
+    
+    
     _funArr = [NSArray array];
     /** < 请求模块标题数据 */
     if (![UserModel isLogin]) {
@@ -115,7 +117,9 @@ static NSString * KListTableFootId = @"KListTableFootId";
     //添加点击事件
     [self.loginBtn addTarget:self action:@selector(action_login) forControlEvents:UIControlEventTouchUpInside];
     
-    [self.view addSubview:self.startView];
+    
+    //添加点击事件
+    [self.loginBtn addTarget:self action:@selector(action_login) forControlEvents:UIControlEventTouchUpInside];
 }
 
 #pragma mark - action
@@ -137,6 +141,7 @@ static NSString * KListTableFootId = @"KListTableFootId";
         [self initLockerInterface];
     }else{
         //弹框登录
+        
         [self.view addSubview:self.loginView];
     }
 }
@@ -296,11 +301,26 @@ static NSString * KListTableFootId = @"KListTableFootId";
     NSString * imgName = [NSString stringWithFormat:@"%@-1.png",_funArr[indexPath.row]];
     cell.listImage.image = IMAGE_CONTENT(imgName);
     cell.listLabel.string = _funArr[indexPath.row];
-    
+    if (indexPath.row == 0) {
+        
+        [self.listTableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+        NSInteger cur_Frame_x = self.cur_vc.view.frame.origin.x;
+
+//        /** < 得到视图控制器 */
+//        Class class = NSClassFromString(self.allVCArr[indexPath.row]);
+//        BaseViewController * next_vc = [[class alloc] init];
+//        [self addChildViewController:next_vc];
+//        next_vc.view.frame = CGRectMake(cur_Frame_x, 0, SCREEN_WIDTH, PAGE_FRAME);
+//        /** < 将当前的controller赋值给cur_vc */
+//        self.cur_vc = next_vc;
+//        self.curRow = indexPath.row;
+        /** < 启动页面 */
+        [self.view addSubview:self.startView];
+    }
     return cell;
 }
 //切换视图控制器
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath :(NSIndexPath *)indexPath{
     if (self.curRow == indexPath.row) {
         return;
     }
