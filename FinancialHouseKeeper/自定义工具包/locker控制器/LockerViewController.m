@@ -132,6 +132,7 @@ static NSString * KListTableFootId = @"KListTableFootId";
         [self initLockerInterface];
     }else{
         //弹框登录
+        
         [self.view addSubview:self.loginView];
     }
 }

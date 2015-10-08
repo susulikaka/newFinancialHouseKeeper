@@ -48,41 +48,52 @@
 
 //确定按钮
 -(void)action_ok{
-    /** < 得到对应的用户名和密码，登录 */
-    NSDictionary * params = @{@"CUSTNAME" : self.accountText.text,
-                              @"CUSTPASS" : self.pwdText.text,
-                              @"UDID" : [UserModel getUDID],
-                              @"TOKENID" : [UserModel getTokenId]};
     
-    [self.loginRequest post:LOGIN_URL parameters:params successHandle:^(NSString *responds) {
-        //解析数据
-        Parse * parse = [[Parse alloc] init];
-        NSArray * result = [parse parse:responds nodePath:@"//isOk"];
-        NSString * isOk = result[0];
-        NSString * errorCode = [parse parse:responds nodePath:@"//erroCode"][0];
-        NSString * errorMsg = [parse parse:responds nodePath:@"//errorMes"][0];
+    /** < 判断是否是登录页面，如果是则请求登录，否则请求获取用户名 */
+    if (! self.isGetAccount) {
+        /** < 得到对应的用户名和密码，登录 */
+        NSDictionary * params = @{@"CUSTNAME" : self.accountText.text,
+                                  @"CUSTPASS" : self.pwdText.text,
+                                  @"UDID" : [UserModel getUDID],
+                                  @"TOKENID" : [UserModel getTokenId]};
         
-        if ([isOk isEqualToString:@"true"] && [errorCode isEqualToString:@"0"]) {
-             NSLog(@"success : %@",errorMsg);
-            /** < 修改功能模块列表 */
+        [self.loginRequest post:LOGIN_URL parameters:params successHandle:^(NSString *responds) {
+            //解析数据
+            Parse * parse = [[Parse alloc] init];
+            NSArray * result = [parse parse:responds nodePath:@"//isOk"];
+            NSString * isOk = result[0];
+            NSString * errorCode = [parse parse:responds nodePath:@"//erroCode"][0];
+            NSString * errorMsg = [parse parse:responds nodePath:@"//errorMes"][0];
             
-            NSString * perId = [parse parse:responds nodePath:@"///string"][0];
-            [UserModel savePerId:perId];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"loginState" object:nil userInfo:@{@"login":[NSNumber numberWithBool:[UserModel isLogin]]}];
-            [self removeFromSuperview];
+            if ([isOk isEqualToString:@"true"] && [errorCode isEqualToString:@"0"]) {
+                NSLog(@"success : %@",errorMsg);
+                /** < 修改功能模块列表 */
+                
+                NSString * perId = [parse parse:responds nodePath:@"///string"][0];
+                [UserModel savePerId:perId];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"loginState" object:nil userInfo:@{@"login":[NSNumber numberWithBool:[UserModel isLogin]]}];
+                [self removeFromSuperview];
+                
+            }else{
+                NSLog(@"success : %@",errorMsg);
+            }
             
-        }else{
-            NSLog(@"success : %@",errorMsg);
-        }
-       
-    } failureHandle:^(NSError *error) {
-        //登录失败
-        NSLog(@"fail");
-    }];
+        } failureHandle:^(NSError *error) {
+            //登录失败
+            NSLog(@"fail");
+        }];
+    }else{
+        //获取用户信息
+        
+        
+    }
     
 }
 
 -(void)action_no{
+    self.accountText.text = nil;
+    self.pwdText.text = nil;
+    
     /** < 如果是获取用户信息页面，则翻转回去 */
     if (self.isGetAccount) {
         [self action_getAccount];
@@ -93,6 +104,9 @@
 }
 
 -(void)action_getAccount{
+    self.accountText.text = nil;
+    self.pwdText.text = nil;
+    
     [UIView transitionWithView:self.backView duration:1 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
         if (self.isGetAccount == NO) {
             self.note.hidden = YES;
