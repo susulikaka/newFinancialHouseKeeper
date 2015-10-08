@@ -84,7 +84,7 @@
         }];
     }else{
         //获取用户信息
-        
+//        [self.loginRequest post:<#(NSString *)#> parameters:<#(NSDictionary *)#> successHandle:<#^(NSString *responds)success#> failureHandle:<#^(NSError *error)faile#>];
         
     }
     

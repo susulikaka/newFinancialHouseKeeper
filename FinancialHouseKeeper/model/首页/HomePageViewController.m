@@ -37,6 +37,12 @@
 
 @implementation HomePageViewController
 
+#pragma mark - life cycle
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self initializeDataSoure];
+}
+
 #pragma mark - init
 -(void)initializeDataSoure {
     [NetworkingManager getHomeImageInfoWithSuccessHandler:^(id responseObject) {
@@ -45,24 +51,22 @@
         NSString *xmlString = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         _dataSource = [XmlParse parseWithXmlString:xmlString nodePath:@"////com.chinaxyl.show.pojo.MediaPojo" nodeNames:nodeNames];
         [self loadImageWithDataSource:_dataSource];
+        [self initializeHomeUserInterface];
     } failuer:^(NSError *error) {
         NSLog(@"%@",error.localizedDescription);
     }];
 }
 
--(void)initializeUserInterface {
-    
+-(void)initializeHomeUserInterface {
+    self.view.backgroundColor = RGB_COLOR(205, 205, 205, 1);
+    self.bankModelImageView.frame = CGRectMake(20, 20, 95, 40);
     self.bankModelImageView.image = IMAGE_CONTENT(@"首页页眉.png");
     [self.view addSubview:self.briefIntroduction];
     [self.view addSubview:self.VIP_left];
     [self.view addSubview:self.VIP_right];
     [self.view addSubview:self.bankEvent];
 }
-#pragma mark - life cycle
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self initializeDataSoure];
-}
+
 #pragma mark - respondToGesture
 - (void)respondToBriefIntroductionTapGesture:(UITapGestureRecognizer *)gesture {
     

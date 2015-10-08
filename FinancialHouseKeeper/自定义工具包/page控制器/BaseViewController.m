@@ -37,7 +37,6 @@
     [self.view addSubview:self.fourthButton];
 }
 
-
 #pragma mark - getter
 - (UIImageView *)bankModelImageView {
     if (!_bankModelImageView) {
