@@ -115,7 +115,7 @@ static NSString * KListTableFootId = @"KListTableFootId";
     [self.cur_vc.view addGestureRecognizer:self.tapGesture];
     [self.view addGestureRecognizer:self.gesture];
     
-    [self.view addSubview:self.startView];
+    
     //添加点击事件
     [self.loginBtn addTarget:self action:@selector(action_login) forControlEvents:UIControlEventTouchUpInside];
 }
@@ -304,14 +304,16 @@ static NSString * KListTableFootId = @"KListTableFootId";
         [self.listTableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
         NSInteger cur_Frame_x = self.cur_vc.view.frame.origin.x;
 
-        /** < 得到视图控制器 */
-        Class class = NSClassFromString(self.allVCArr[indexPath.row]);
-        BaseViewController * next_vc = [[class alloc] init];
-        [self addChildViewController:next_vc];
-        next_vc.view.frame = CGRectMake(cur_Frame_x, 0, SCREEN_WIDTH, PAGE_FRAME);
-        /** < 将当前的controller赋值给cur_vc */
-        self.cur_vc = next_vc;
-        self.curRow = indexPath.row;
+//        /** < 得到视图控制器 */
+//        Class class = NSClassFromString(self.allVCArr[indexPath.row]);
+//        BaseViewController * next_vc = [[class alloc] init];
+//        [self addChildViewController:next_vc];
+//        next_vc.view.frame = CGRectMake(cur_Frame_x, 0, SCREEN_WIDTH, PAGE_FRAME);
+//        /** < 将当前的controller赋值给cur_vc */
+//        self.cur_vc = next_vc;
+//        self.curRow = indexPath.row;
+        /** < 启动页面 */
+        [self.view addSubview:self.startView];
     }
     return cell;
 }
