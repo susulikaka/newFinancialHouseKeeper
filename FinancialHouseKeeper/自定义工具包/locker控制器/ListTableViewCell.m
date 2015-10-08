@@ -13,7 +13,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         self.listImage = ({
-            UIImageView * view = [[UIImageView alloc] initWithFrame:CGRectMake(5, 10, 65, 75)];
+            UIImageView * view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 10, 65, 75)];
             view;
         });
         

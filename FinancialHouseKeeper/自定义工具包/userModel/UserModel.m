@@ -29,11 +29,11 @@
 
 
 +(BOOL)isLogin{
-//    if ([self getPerId] == nil) {
-//        return NO;
-//    }else{
-//        return YES;
-//    }
+    if ([self getPerId] == nil || [[self getPerId] isEqualToString:@"0"]) {
+        return NO;
+    }else{
+        return YES;
+    }
     return YES;
 }
 @end

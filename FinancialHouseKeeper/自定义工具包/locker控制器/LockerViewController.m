@@ -10,10 +10,11 @@
 #import "ListTableViewCell.h"
 #import "FunctionList.h"
 #import "HomePageViewController.h"
+#import "LoginView.h"
 
 static CGFloat closeWidth = 60;
 static CGFloat openWidth = 225;
-static CGFloat PAGE_FRAME = SCREEN_HEIGHT - 30;
+static CGFloat PAGE_FRAME = SCREEN_HEIGHT - 20;
 
 static NSString * KListTableViewCellId = @"KListTableViewCellId";
 static NSString * KListTableHeadId = @"KListTableHeadId";
@@ -37,6 +38,9 @@ static NSString * KListTableFootId = @"KListTableFootId";
 @property(nonatomic,strong) UIButton                * configBtn;/** < 设置按钮 */
 @property(nonatomic,strong) UIButton                * loginBtn;/** < 登录按钮 */
 @property(nonatomic,strong) UIButton                * verBtn;/** < 版本按钮 */
+
+//登录
+@property(nonatomic,strong) LoginView * loginView;/** < 登录视图 */
 
 
 -(void)initLockerDatasource;
@@ -88,19 +92,38 @@ static NSString * KListTableFootId = @"KListTableFootId";
     
     [self.view addSubview:self.loginBtn];
     [self.view addSubview:self.verBtn];
+    //登录后才显示 登录和登出按钮
     if ([UserModel isLogin]) {
         [self.view addSubview:self.configBtn];
+        [self.loginBtn setTitle:@"登出" forState:UIControlStateNormal];
+        [self.loginBtn setImage:IMAGE_CONTENT(@"登出-1.png") forState:UIControlStateNormal];
+        
     }
     
     [self addChildViewController:self.home_vc];
-    self.home_vc.view.frame = CGRectMake(80, 0, SCREEN_WIDTH, PAGE_FRAME);
+    self.home_vc.view.frame = CGRectMake(closeWidth, 0, SCREEN_WIDTH, PAGE_FRAME);
 
     [self.cur_vc.view addGestureRecognizer:self.tapGesture];
     [self.view addGestureRecognizer:self.gesture];
+    //添加点击事件
+    [self.loginBtn addTarget:self action:@selector(action_login) forControlEvents:UIControlEventTouchUpInside];
 }
 
 #pragma mark - action
+//登录或者登出
+- (void)action_login {
+    if ([UserModel isLogin]) {
+        //弹框登出
+        [UserModel savePerId:@"0"];
+        [self initLockerDatasource];
+        [self.listTableView reloadData];
+    }else{
+        //弹框登录
+        [self.view addSubview:self.loginView];
+    }
+}
 
+//点击
 -(void)action_tap : (UITapGestureRecognizer *)gesture{
     [self close];
 }
@@ -225,7 +248,7 @@ static NSString * KListTableFootId = @"KListTableFootId";
     UITableViewHeaderFooterView * head = [tableView dequeueReusableHeaderFooterViewWithIdentifier:KListTableHeadId];
     
     //添加头像和文字
-    UIImageView * image = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, 65, 65)];
+    UIImageView * image = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, 50, 50)];
     
     CATextLayer * layer = [CATextLayer layer];
     layer.bounds = CGRectMake(0, 0, 60, 30);
@@ -238,7 +261,6 @@ static NSString * KListTableFootId = @"KListTableFootId";
         image.image = IMAGE_CONTENT(@"底1_04.png");
         
         layer.string = @"hahhahah";
-        
         
         [head addSubview:image]; //(若将此注释：view未添加)
         [head.layer addSublayer:layer];
@@ -283,6 +305,17 @@ static NSString * KListTableFootId = @"KListTableFootId";
 }
 
 #pragma mark - getter
+
+
+- (LoginView *)loginView{
+    if (!_loginView) {
+        _loginView = ({
+            LoginView * logView = [[LoginView alloc] initWithFrame:self.view.frame];
+            logView;
+        });
+    }
+    return _loginView;
+}
 
 - (UITapGestureRecognizer *)tapGesture{
     if (!_tapGesture) {
@@ -335,7 +368,7 @@ static NSString * KListTableFootId = @"KListTableFootId";
             UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
             btn.bounds = CGRectMake(0, 0, 140, 70);
             btn.center = CGPointMake(70, 840);
-            btn.imageEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 70);
+            btn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 70);
             btn.titleEdgeInsets = UIEdgeInsetsMake(0, -50, 0, 10);
             [btn setTitle:@"设置" forState:UIControlStateNormal];
             [btn setTitleColor:RGB_COLOR(223, 196, 118, 1) forState:UIControlStateNormal];
@@ -353,7 +386,7 @@ static NSString * KListTableFootId = @"KListTableFootId";
             UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
             btn.bounds = CGRectMake(0, 0, 140, 70);
             btn.center = CGPointMake(70, 900);
-            btn.imageEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 70);
+            btn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 70);
             btn.titleEdgeInsets = UIEdgeInsetsMake(0, -50, 0, 10);
             [btn setTitle:@"登录" forState:UIControlStateNormal];
             [btn setTitleColor:RGB_COLOR(223, 196, 118, 1) forState:UIControlStateNormal];
@@ -371,7 +404,7 @@ static NSString * KListTableFootId = @"KListTableFootId";
             UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
             btn.bounds = CGRectMake(0, 0, 140, 70);
             btn.center = CGPointMake(70, 960);
-            btn.imageEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 70);
+            btn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 70);
             btn.titleEdgeInsets = UIEdgeInsetsMake(0, -50, 0, 10);
             [btn setTitle:@"版本" forState:UIControlStateNormal];
             [btn setTitleColor:RGB_COLOR(223, 196, 118, 1) forState:UIControlStateNormal];
