@@ -320,9 +320,14 @@ static NSString * KListTableFootId = @"KListTableFootId";
     [self.cur_vc.view removeFromSuperview];
     [self.cur_vc removeFromParentViewController];
     [self.cur_vc willMoveToParentViewController:nil];
-    
+    Class class;
     /** < 得到视图控制器 */
-    Class class = NSClassFromString(self.allVCArr[indexPath.row]);
+    if ([UserModel isLogin]) {
+        class = NSClassFromString(self.allVCArr[indexPath.row]);
+    }else{
+        class = NSClassFromString(self.beAllVCArr[indexPath.row]);
+    }
+    
     BaseViewController * next_vc = [[class alloc] init];
     [self addChildViewController:next_vc];
     next_vc.view.frame = CGRectMake(cur_Frame_x, 0, SCREEN_WIDTH, PAGE_FRAME);

@@ -12,5 +12,5 @@
 @interface LockerViewController : UIViewController
 
 
-@property(nonatomic,strong,readonly) HomePageViewController * page_vc;/** < 页面视图 */
+@property(nonatomic,strong,readonly) BaseViewController * page_vc;/** < 页面视图 */
 @end
