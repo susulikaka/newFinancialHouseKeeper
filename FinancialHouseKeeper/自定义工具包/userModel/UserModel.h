@@ -24,6 +24,35 @@
  *  @return 用户Id
  */
 +(NSString *)getPerId;
+
+/**
+ *  保存tokenId
+ *
+ *  @param token tokenId
+ */
++(void)saveTokenId : (NSString *)token;
+/**
+ *  得到tokenId
+ *
+ *  @param token tokenId
+ *
+ *  @return
+ */
++(NSString *)getTokenId;
+/**
+ *  得到UDID
+ *
+ *  @return
+ */
++(NSString *)getUDID;
+/**
+ *  保存登录状态
+ *
+ *  @param state
+ *
+ *  @return
+ */
++(void)saveLoginState : (BOOL)state;
 /**
  *  //判断是否已经登录
  *

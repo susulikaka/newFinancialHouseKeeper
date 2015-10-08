@@ -10,7 +10,7 @@
 
 @interface LoginView : UIView
 
-@property(nonatomic,strong) UIView * backView;/** < 背景 */
+@property(nonatomic,strong) UIImageView * backView;/** < 背景 */
 
 @property(nonatomic,strong) UILabel * account;
 @property(nonatomic,strong) UILabel * pwd;
@@ -18,10 +18,14 @@
 @property(nonatomic,strong) UITextField * accountText;/** < 账号 */
 @property(nonatomic,strong) UITextField * pwdText;/** < 密码 */
 
-@property(nonatomic,strong) UILabel * note;
+@property(nonatomic,strong) UILabel * note;/** < 备注 */
 @property(nonatomic,strong) UIButton * okBtn;
 @property(nonatomic,strong) UIButton * noBtn;
 
-+(instancetype)showLoginLabel;
+@property(nonatomic,strong) UIButton * getAccountBtn;/** < 取回用户名 */
+@property(nonatomic,assign) BOOL isGetAccount;/** < 是否是取回用户名界面 */
+
+@property(nonatomic,strong) NetworkRequest * loginRequest;/** < 登录请求 */
+
 
 @end

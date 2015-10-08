@@ -19,7 +19,7 @@
 +(NSString *)getPerId{
     NSString * perID = [[NSUserDefaults standardUserDefaults] objectForKey:@"personID"];
     
-    if (perID == nil) {
+    if (perID == nil || [perID isEqualToString:@"0"]) {
         return @"0";
     }else{
         return perID;
@@ -27,9 +27,33 @@
     
 }
 
++(void)saveTokenId:(NSString *)token{
+    [[NSUserDefaults standardUserDefaults] setObject:token forKey:@"TOKENID"];
+}
+
++(NSString *)getTokenId{
+    NSString * perID = [[NSUserDefaults standardUserDefaults] objectForKey:@"TOKENID"];
+    
+    if (perID == nil) {
+        return @"0";
+    }else{
+        return perID;
+    }
+}
+
++(NSString *)getUDID{
+    
+    return @"FFFFFFFFAC4A9DBE8005463697C15AADEA639730";
+}
+
++(void)saveLoginState:(BOOL)state{
+    if (state == NO) {
+        [self savePerId:@"0"];
+    }
+}
 
 +(BOOL)isLogin{
-    if ([self getPerId] == nil || [[self getPerId] isEqualToString:@"0"]) {
+    if ([[self getPerId] isEqualToString:@"0"] || [self getPerId] == nil) {
         return NO;
     }else{
         return YES;
