@@ -79,13 +79,13 @@ static NSString * KListTableFootId = @"KListTableFootId";
             _funArr = [list copy];
             [self.listTableView reloadData];
         }];
-
     }
 }
 
 //初始化视图
 - (void)initLockerInterface{
     self.view.backgroundColor = [UIColor whiteColor];
+    
     [self.view addSubview:self.listTableView];
     
     
