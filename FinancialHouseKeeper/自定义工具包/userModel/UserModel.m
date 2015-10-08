@@ -53,7 +53,7 @@
 }
 
 +(BOOL)isLogin{
-    if ([[self getPerId] isEqualToString:@"0"] || [self getPerId] == nil) {
+    if ([self getPerId] == nil || [[self getPerId] isEqualToString:@"0"]) {
         return NO;
     }else{
         return YES;

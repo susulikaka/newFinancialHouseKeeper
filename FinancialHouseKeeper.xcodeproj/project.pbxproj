@@ -20,6 +20,7 @@
 		245B4F8D1BBA56BF00C53CC3 /* FinConsultionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B4F8C1BBA56BF00C53CC3 /* FinConsultionViewController.m */; };
 		245B4F911BBA97F800C53CC3 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B4F901BBA97F800C53CC3 /* UserModel.m */; };
 		247E3BE41BBBA35300829561 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 247E3BE31BBBA35300829561 /* LoginView.m */; };
+		247E3BE81BBBC5A200829561 /* UIViewController+tap.m in Sources */ = {isa = PBXBuildFile; fileRef = 247E3BE71BBBC5A200829561 /* UIViewController+tap.m */; };
 		248790911BB9228700B9E930 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 248790901BB9228700B9E930 /* main.m */; };
 		248790941BB9228700B9E930 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 248790931BB9228700B9E930 /* AppDelegate.m */; };
 		248790971BB9228700B9E930 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 248790961BB9228700B9E930 /* ViewController.m */; };
@@ -566,6 +567,8 @@
 		245B4F901BBA97F800C53CC3 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		247E3BE21BBBA35300829561 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
 		247E3BE31BBBA35300829561 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		247E3BE61BBBC5A200829561 /* UIViewController+tap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+tap.h"; sourceTree = "<group>"; };
+		247E3BE71BBBC5A200829561 /* UIViewController+tap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+tap.m"; sourceTree = "<group>"; };
 		2487908B1BB9228700B9E930 /* FinancialHouseKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinancialHouseKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2487908F1BB9228700B9E930 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		248790901BB9228700B9E930 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1170,6 +1173,15 @@
 			path = "金融资讯/登录";
 			sourceTree = "<group>";
 		};
+		247E3BE51BBBC58300829561 /* 手势冲突 */ = {
+			isa = PBXGroup;
+			children = (
+				247E3BE61BBBC5A200829561 /* UIViewController+tap.h */,
+				247E3BE71BBBC5A200829561 /* UIViewController+tap.m */,
+			);
+			path = "手势冲突";
+			sourceTree = "<group>";
+		};
 		248790821BB9228700B9E930 = {
 			isa = PBXGroup;
 			children = (
@@ -1719,6 +1731,7 @@
 			isa = PBXGroup;
 			children = (
 				24E9030A1BC60B3C003999B6 /* 胖哥网络请求 */,
+				247E3BE51BBBC58300829561 /* 手势冲突 */,
 				245B4F8E1BBA97E900C53CC3 /* userModel */,
 				24B9881D1BBA2DCE00C55EF9 /* page控制器 */,
 				248794D51BB941AC00B9E930 /* networkRequest */,
@@ -2623,6 +2636,7 @@
 				245B4F6F1BBA52DE00C53CC3 /* EBankViewController.m in Sources */,
 				248794C51BB9413900B9E930 /* MKAnnotationView+WebCache.m in Sources */,
 				245B4F7D1BBA537A00C53CC3 /* PayServiceViewController.m in Sources */,
+				247E3BE81BBBC5A200829561 /* UIViewController+tap.m in Sources */,
 				248794C81BB9413900B9E930 /* SDWebImageCompat.m in Sources */,
 				248794CE1BB9413900B9E930 /* UIButton+WebCache.m in Sources */,
 				248794D21BB9413900B9E930 /* UIImageView+HighlightedWebCache.m in Sources */,
