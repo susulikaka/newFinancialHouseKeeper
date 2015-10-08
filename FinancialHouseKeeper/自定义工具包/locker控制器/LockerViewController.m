@@ -82,13 +82,14 @@ static NSString * KListTableFootId = @"KListTableFootId";
         }];
 
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(action_notification:) name:@"loginState" object:nil];
 }
 
 //初始化视图
 - (void)initLockerInterface{
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.listTableView];
-    
     
     [self.view addSubview:self.loginBtn];
     [self.view addSubview:self.verBtn];
@@ -98,6 +99,9 @@ static NSString * KListTableFootId = @"KListTableFootId";
         [self.loginBtn setTitle:@"登出" forState:UIControlStateNormal];
         [self.loginBtn setImage:IMAGE_CONTENT(@"登出-1.png") forState:UIControlStateNormal];
         
+    }else{
+        [self.loginBtn setTitle:@"登录" forState:UIControlStateNormal];
+        [self.loginBtn setImage:IMAGE_CONTENT(@"登录-1.png") forState:UIControlStateNormal];
     }
     
     [self addChildViewController:self.home_vc];
@@ -110,13 +114,22 @@ static NSString * KListTableFootId = @"KListTableFootId";
 }
 
 #pragma mark - action
+
+-(void)action_notification : (NSNotification *)sender{
+    if (sender.userInfo[@"login"]) {
+        [self initLockerDatasource];
+        [self initLockerInterface];
+    }
+}
+
 //登录或者登出
 - (void)action_login {
     if ([UserModel isLogin]) {
         //弹框登出
         [UserModel savePerId:@"0"];
+        
         [self initLockerDatasource];
-        [self.listTableView reloadData];
+        [self initLockerInterface];
     }else{
         //弹框登录
         [self.view addSubview:self.loginView];

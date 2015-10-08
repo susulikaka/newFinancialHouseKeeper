@@ -49,6 +49,36 @@
 //确定按钮
 -(void)action_ok{
     /** < 得到对应的用户名和密码，登录 */
+    NSDictionary * params = @{@"CUSTNAME" : self.accountText.text,
+                              @"CUSTPASS" : self.pwdText.text,
+                              @"UDID" : [UserModel getUDID],
+                              @"TOKENID" : [UserModel getTokenId]};
+    
+    [self.loginRequest post:LOGIN_URL parameters:params successHandle:^(NSString *responds) {
+        //解析数据
+        Parse * parse = [[Parse alloc] init];
+        NSArray * result = [parse parse:responds nodePath:@"//isOk"];
+        NSString * isOk = result[0];
+        NSString * errorCode = [parse parse:responds nodePath:@"//erroCode"][0];
+        NSString * errorMsg = [parse parse:responds nodePath:@"//errorMes"][0];
+        
+        if ([isOk isEqualToString:@"true"] && [errorCode isEqualToString:@"0"]) {
+             NSLog(@"success : %@",errorMsg);
+            /** < 修改功能模块列表 */
+            
+            NSString * perId = [parse parse:responds nodePath:@"///string"][0];
+            [UserModel savePerId:perId];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"loginState" object:nil userInfo:@{@"login":[NSNumber numberWithBool:[UserModel isLogin]]}];
+            [self removeFromSuperview];
+            
+        }else{
+            NSLog(@"success : %@",errorMsg);
+        }
+       
+    } failureHandle:^(NSError *error) {
+        //登录失败
+        NSLog(@"fail");
+    }];
     
 }
 
@@ -60,7 +90,6 @@
         /** < 如果是登录界面，移除 */
         [self removeFromSuperview];
     }
-    
 }
 
 -(void)action_getAccount{
@@ -81,6 +110,16 @@
 }
 
 #pragma mark - getter
+
+- (NetworkRequest *)loginRequest{
+    if (!_loginRequest) {
+        _loginRequest = ({
+            NetworkRequest * request = [[NetworkRequest alloc] init];
+            request;
+        });
+    }
+    return _loginRequest;
+}
 
 - (UIButton *)getAccountBtn{
     if (!_getAccountBtn) {

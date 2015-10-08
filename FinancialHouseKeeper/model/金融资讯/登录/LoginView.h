@@ -23,8 +23,9 @@
 @property(nonatomic,strong) UIButton * noBtn;
 
 @property(nonatomic,strong) UIButton * getAccountBtn;/** < 取回用户名 */
-
 @property(nonatomic,assign) BOOL isGetAccount;/** < 是否是取回用户名界面 */
+
+@property(nonatomic,strong) NetworkRequest * loginRequest;/** < 登录请求 */
 
 
 @end
