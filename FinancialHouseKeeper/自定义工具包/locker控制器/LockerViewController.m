@@ -10,6 +10,7 @@
 #import "ListTableViewCell.h"
 #import "FunctionList.h"
 #import "HomePageViewController.h"
+#import "StartView.h"
 #import "LoginView.h"
 
 static CGFloat closeWidth = 60;
@@ -33,6 +34,8 @@ static NSString * KListTableFootId = @"KListTableFootId";
 @property(nonatomic,strong) NSArray                 * allVCArr;/** < 所有的视图控制器名字 */
 @property(nonatomic,strong) NSArray                 * beAllVCArr;/** < 登录前的视图控制器名字 */
 @property(nonatomic,strong) UITapGestureRecognizer * tapGesture;/** < 点击手势 */
+
+@property (nonatomic, strong) StartView *startView; /**< 启动页 */
 
 /** < 尾部视图 */
 @property(nonatomic,strong) UIButton                * configBtn;/** < 设置按钮 */
@@ -82,7 +85,6 @@ static NSString * KListTableFootId = @"KListTableFootId";
             _funArr = [list copy];
             [self.listTableView reloadData];
         }];
-
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(action_notification:) name:@"loginState" object:nil];
@@ -91,6 +93,7 @@ static NSString * KListTableFootId = @"KListTableFootId";
 //初始化视图
 - (void)initLockerInterface{
     self.view.backgroundColor = [UIColor whiteColor];
+    
     [self.view addSubview:self.listTableView];
     
     [self.view addSubview:self.loginBtn];
@@ -111,6 +114,8 @@ static NSString * KListTableFootId = @"KListTableFootId";
 
     [self.cur_vc.view addGestureRecognizer:self.tapGesture];
     [self.view addGestureRecognizer:self.gesture];
+    
+    [self.view addSubview:self.startView];
     //添加点击事件
     [self.loginBtn addTarget:self action:@selector(action_login) forControlEvents:UIControlEventTouchUpInside];
 }
@@ -443,6 +448,13 @@ static NSString * KListTableFootId = @"KListTableFootId";
         });
     }
     return _verBtn;
+}
+
+- (StartView *)startView {
+    if (!_startView) {
+        _startView = [[StartView alloc] initWithFrame:CGRectMake(0, 0, 768, 1024)];
+    }
+    return _startView;
 }
 
 @end
