@@ -2,11 +2,11 @@
 //  BankCardViewController.h
 //  FinancialHouseKeeper
 //
-//  Created by rimi on 15/9/29.
+//  Created by rimi on 15/10/9.
 //  Copyright (c) 2015年 lili. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import <UIKit/UIKit.h>
 
 @interface BankCardViewController : BaseViewController
 

@@ -16,9 +16,9 @@
 		245B4F7A1BBA536000C53CC3 /* 背景.png in Resources */ = {isa = PBXBuildFile; fileRef = 245B4F791BBA536000C53CC3 /* 背景.png */; };
 		245B4F7D1BBA537A00C53CC3 /* PayServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B4F7C1BBA537A00C53CC3 /* PayServiceViewController.m */; };
 		245B4F801BBA538300C53CC3 /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B4F7F1BBA538300C53CC3 /* ConfigViewController.m */; };
-		245B4F891BBA53E000C53CC3 /* BankCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B4F881BBA53E000C53CC3 /* BankCardViewController.m */; };
 		245B4F8D1BBA56BF00C53CC3 /* FinConsultionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B4F8C1BBA56BF00C53CC3 /* FinConsultionViewController.m */; };
 		245B4F911BBA97F800C53CC3 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B4F901BBA97F800C53CC3 /* UserModel.m */; };
+		245B761C1BC7821200DB9066 /* BankCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B761B1BC7821200DB9066 /* BankCardViewController.m */; };
 		2467DE3C1BC75B7E0026BB86 /* BankCardList.m in Sources */ = {isa = PBXBuildFile; fileRef = 2467DE3B1BC75B7E0026BB86 /* BankCardList.m */; };
 		2467DE3F1BC768F40026BB86 /* BankCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2467DE3E1BC768F40026BB86 /* BankCardCell.m */; };
 		247E3BE41BBBA35300829561 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 247E3BE31BBBA35300829561 /* LoginView.m */; };
@@ -561,12 +561,12 @@
 		245B4F7C1BBA537A00C53CC3 /* PayServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayServiceViewController.m; sourceTree = "<group>"; };
 		245B4F7E1BBA538300C53CC3 /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
 		245B4F7F1BBA538300C53CC3 /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
-		245B4F871BBA53E000C53CC3 /* BankCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCardViewController.h; sourceTree = "<group>"; };
-		245B4F881BBA53E000C53CC3 /* BankCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCardViewController.m; sourceTree = "<group>"; };
 		245B4F8B1BBA56BF00C53CC3 /* FinConsultionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinConsultionViewController.h; sourceTree = "<group>"; };
 		245B4F8C1BBA56BF00C53CC3 /* FinConsultionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinConsultionViewController.m; sourceTree = "<group>"; };
 		245B4F8F1BBA97F800C53CC3 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		245B4F901BBA97F800C53CC3 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		245B761A1BC7821200DB9066 /* BankCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCardViewController.h; sourceTree = "<group>"; };
+		245B761B1BC7821200DB9066 /* BankCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCardViewController.m; sourceTree = "<group>"; };
 		2467DE3A1BC75B7E0026BB86 /* BankCardList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCardList.h; sourceTree = "<group>"; };
 		2467DE3B1BC75B7E0026BB86 /* BankCardList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCardList.m; sourceTree = "<group>"; };
 		2467DE3D1BC768F40026BB86 /* BankCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCardCell.h; sourceTree = "<group>"; };
@@ -1176,6 +1176,13 @@
 				2467DE3B1BC75B7E0026BB86 /* BankCardList.m */,
 			);
 			path = bankCardList;
+			sourceTree = "<group>";
+		};
+		2467DE401BC77E300026BB86 /* 详情 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "详情";
 			sourceTree = "<group>";
 		};
 		247E3BE11BBBA35300829561 /* 登录 */ = {
@@ -1851,10 +1858,11 @@
 		248790C31BB926AF00B9E930 /* 银行卡 */ = {
 			isa = PBXGroup;
 			children = (
-				245B4F871BBA53E000C53CC3 /* BankCardViewController.h */,
-				245B4F881BBA53E000C53CC3 /* BankCardViewController.m */,
+				2467DE401BC77E300026BB86 /* 详情 */,
 				2467DE3D1BC768F40026BB86 /* BankCardCell.h */,
 				2467DE3E1BC768F40026BB86 /* BankCardCell.m */,
+				245B761A1BC7821200DB9066 /* BankCardViewController.h */,
+				245B761B1BC7821200DB9066 /* BankCardViewController.m */,
 			);
 			path = "银行卡";
 			sourceTree = "<group>";
@@ -2643,10 +2651,10 @@
 				248794DB1BB9424B00B9E930 /* NetworkRequest.m in Sources */,
 				248794BB1BB9413900B9E930 /* AFHTTPRequestOperationManager.m in Sources */,
 				245B4F781BBA534000C53CC3 /* MonServiceViewController.m in Sources */,
-				245B4F891BBA53E000C53CC3 /* BankCardViewController.m in Sources */,
 				248794BE1BB9413900B9E930 /* AFSecurityPolicy.m in Sources */,
 				248794CC1BB9413900B9E930 /* SDWebImageManager.m in Sources */,
 				248794C91BB9413900B9E930 /* SDWebImageDecoder.m in Sources */,
+				245B761C1BC7821200DB9066 /* BankCardViewController.m in Sources */,
 				248794CB1BB9413900B9E930 /* SDWebImageDownloaderOperation.m in Sources */,
 				248794C11BB9413900B9E930 /* AFURLResponseSerialization.m in Sources */,
 				248794DC1BB9424B00B9E930 /* Parse.m in Sources */,

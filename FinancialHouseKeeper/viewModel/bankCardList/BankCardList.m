@@ -23,11 +23,13 @@ typedef cardListBlock cardList;
 
 - (void)getCardDic:(void (^)(NSDictionary *))listBlock{
     self.cardList = listBlock;
+    self.cardDic = [NSMutableDictionary dictionary];
     NSDictionary * params = @{@"pageSize":@"10",
                               @"startNum":@"0",
                               @"typeId":@"",
                               @"typeCode":@"5"};
     [self.request post:PRODUCT_LIST_URL parameters:params successHandle:^(NSString *responds) {
+        
         self.cardDic[@"productName"] =[self.parse parse:responds nodePath:@"////productName"];
         self.cardDic[@"summary"] = [self.parse parse:responds nodePath:@"////summary"];
         
@@ -37,12 +39,11 @@ typedef cardListBlock cardList;
             /** < 得到图片地址 */
             NSString * imgUrl = [self modificationImageUrlAddressWithUrl:resultArr[idx]];
             /** < 转换图片 */
-            resultArr[idx] = [self viewsLoadData:imgUrl];
+            resultArr[idx] = imgUrl;
         }];
         
         self.cardDic[@"img"] = resultArr;
         self.cardList(self.cardDic);
-        NSLog(@"%@",responds);
     } failureHandle:^(NSError *error) {
         
     }];
@@ -58,12 +59,8 @@ typedef cardListBlock cardList;
 
 - (UIImageView *)viewsLoadData:(NSString *)datas {
     UIImageView *imageView = [[UIImageView alloc] init];
-//    for (NSDictionary * obj in datas) {
-//        NSInteger index = [obj[@"index"] integerValue];
-//        NSString *urlString = obj[@"url"];
-    
+
         [imageView sd_setImageWithURL:[NSURL URLWithString:datas] placeholderImage:nil];
-//    }
     return imageView;
 }
 

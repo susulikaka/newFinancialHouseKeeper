@@ -12,7 +12,7 @@ typedef void(^cardListBlock)(NSDictionary * list);
 
 @interface BankCardList : NSObject
 
-@property(nonatomic,strong,readonly) __block NSMutableDictionary * cardDic;/** < 银行卡列表 */
+@property(nonatomic,strong) __block NSMutableDictionary * cardDic;/** < 银行卡列表 */
 @property(nonatomic,copy) cardListBlock cardList;/** < 返回的listblock */
 
 -(void)getCardDic : (void(^)(NSDictionary * list))listBlock;/** < 得到银行卡列表 */
