@@ -41,6 +41,7 @@ static NSString * const CardHEADKEY = @"CardHEADKEY";
     _dataSource = [NSDictionary dictionary];
     [_bankCardList getCardDic:^(NSDictionary *list) {
         _dataSource = [list copy];
+        [self initBankCardInterface];
     }];
 }
 
