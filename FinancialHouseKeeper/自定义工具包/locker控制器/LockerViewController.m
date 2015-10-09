@@ -63,7 +63,7 @@ static NSString * KListTableFootId = @"KListTableFootId";
 
 - (void)initLockerDatasource{
     self.allVCArr = @[@"HomePageViewController",@"FinConsultionViewController",@"MonServiceViewController",@"BankCardViewController",@"PayServiceViewController",@"DelProducyViewController",@"EBankViewController",@"ActiComunicationViewController",@"ScheAlertViewController",@"BusConsultionViewController"];
-    self.beAllVCArr = @[@"HomePageViewController",@"FinConsultionViewController",@"MonServiceViewController",@"BankCardViewController",@"DelProducyViewController",@"EBankViewController"];
+    self.beAllVCArr = @[@"HomePageViewController",@"FinConsultionViewController",@"MonServiceViewController",@"DelProducyViewController",@"EBankViewController"];
     
     self.funList = [[FunctionList alloc] init];
     self.cur_vc = self.home_vc;/** < 默认当前页面为首页 */
@@ -73,19 +73,19 @@ static NSString * KListTableFootId = @"KListTableFootId";
     
     _funArr = [NSArray array];
     /** < 请求模块标题数据 */
-    if (![UserModel isLogin]) {
-        
-        [self.funList getBeLogFunList:^(NSArray *list) {
-            _funArr = [list copy];
-            [self.listTableView reloadData];
-        }];
-        
-    }else{
+//    if (![UserModel isLogin]) {
+//        
+//        [self.funList getBeLogFunList:^(NSArray *list) {
+//            _funArr = [list copy];
+//            [self.listTableView reloadData];
+//        }];
+//        
+//    }else{
         [self.funList getAfLogFunList:^(NSArray *list) {
             _funArr = [list copy];
             [self.listTableView reloadData];
         }];
-    }
+//    }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(action_notification:) name:@"loginState" object:nil];
 }
@@ -252,6 +252,7 @@ static NSString * KListTableFootId = @"KListTableFootId";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _funArr.count;
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -259,7 +260,7 @@ static NSString * KListTableFootId = @"KListTableFootId";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 72;
+    return 66;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -322,11 +323,11 @@ static NSString * KListTableFootId = @"KListTableFootId";
     [self.cur_vc willMoveToParentViewController:nil];
     Class class;
     /** < 得到视图控制器 */
-    if ([UserModel isLogin]) {
+//    if ([UserModel isLogin]) {
         class = NSClassFromString(self.allVCArr[indexPath.row]);
-    }else{
-        class = NSClassFromString(self.beAllVCArr[indexPath.row]);
-    }
+//    }else{
+//        class = NSClassFromString(self.beAllVCArr[indexPath.row]);
+//    }
     
     BaseViewController * next_vc = [[class alloc] init];
     [self addChildViewController:next_vc];

@@ -19,6 +19,8 @@
 		245B4F891BBA53E000C53CC3 /* BankCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B4F881BBA53E000C53CC3 /* BankCardViewController.m */; };
 		245B4F8D1BBA56BF00C53CC3 /* FinConsultionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B4F8C1BBA56BF00C53CC3 /* FinConsultionViewController.m */; };
 		245B4F911BBA97F800C53CC3 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B4F901BBA97F800C53CC3 /* UserModel.m */; };
+		2467DE3C1BC75B7E0026BB86 /* BankCardList.m in Sources */ = {isa = PBXBuildFile; fileRef = 2467DE3B1BC75B7E0026BB86 /* BankCardList.m */; };
+		2467DE3F1BC768F40026BB86 /* BankCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2467DE3E1BC768F40026BB86 /* BankCardCell.m */; };
 		247E3BE41BBBA35300829561 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 247E3BE31BBBA35300829561 /* LoginView.m */; };
 		247E3BE81BBBC5A200829561 /* UIViewController+tap.m in Sources */ = {isa = PBXBuildFile; fileRef = 247E3BE71BBBC5A200829561 /* UIViewController+tap.m */; };
 		248790911BB9228700B9E930 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 248790901BB9228700B9E930 /* main.m */; };
@@ -565,6 +567,10 @@
 		245B4F8C1BBA56BF00C53CC3 /* FinConsultionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinConsultionViewController.m; sourceTree = "<group>"; };
 		245B4F8F1BBA97F800C53CC3 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		245B4F901BBA97F800C53CC3 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		2467DE3A1BC75B7E0026BB86 /* BankCardList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCardList.h; sourceTree = "<group>"; };
+		2467DE3B1BC75B7E0026BB86 /* BankCardList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCardList.m; sourceTree = "<group>"; };
+		2467DE3D1BC768F40026BB86 /* BankCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCardCell.h; sourceTree = "<group>"; };
+		2467DE3E1BC768F40026BB86 /* BankCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCardCell.m; sourceTree = "<group>"; };
 		247E3BE21BBBA35300829561 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
 		247E3BE31BBBA35300829561 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
 		247E3BE61BBBC5A200829561 /* UIViewController+tap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+tap.h"; sourceTree = "<group>"; };
@@ -1161,6 +1167,15 @@
 				245B4F901BBA97F800C53CC3 /* UserModel.m */,
 			);
 			path = userModel;
+			sourceTree = "<group>";
+		};
+		2467DE391BC75B680026BB86 /* bankCardList */ = {
+			isa = PBXGroup;
+			children = (
+				2467DE3A1BC75B7E0026BB86 /* BankCardList.h */,
+				2467DE3B1BC75B7E0026BB86 /* BankCardList.m */,
+			);
+			path = bankCardList;
 			sourceTree = "<group>";
 		};
 		247E3BE11BBBA35300829561 /* 登录 */ = {
@@ -1838,6 +1853,8 @@
 			children = (
 				245B4F871BBA53E000C53CC3 /* BankCardViewController.h */,
 				245B4F881BBA53E000C53CC3 /* BankCardViewController.m */,
+				2467DE3D1BC768F40026BB86 /* BankCardCell.h */,
+				2467DE3E1BC768F40026BB86 /* BankCardCell.m */,
 			);
 			path = "银行卡";
 			sourceTree = "<group>";
@@ -1854,6 +1871,7 @@
 		248790C51BB926AF00B9E930 /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2467DE391BC75B680026BB86 /* bankCardList */,
 				248794721BB92D2D00B9E930 /* functionList */,
 			);
 			path = viewModel;
@@ -2605,6 +2623,7 @@
 				248794D01BB9413900B9E930 /* UIImage+MultiFormat.m in Sources */,
 				245B4F801BBA538300C53CC3 /* ConfigViewController.m in Sources */,
 				248794D11BB9413900B9E930 /* UIImage+WebP.m in Sources */,
+				2467DE3C1BC75B7E0026BB86 /* BankCardList.m in Sources */,
 				248794751BB92D2D00B9E930 /* FunctionList.m in Sources */,
 				248794BF1BB9413900B9E930 /* AFURLConnectionOperation.m in Sources */,
 				248794D31BB9413900B9E930 /* UIImageView+WebCache.m in Sources */,
@@ -2634,6 +2653,7 @@
 				245B4F911BBA97F800C53CC3 /* UserModel.m in Sources */,
 				248794BA1BB9413900B9E930 /* AFHTTPRequestOperation.m in Sources */,
 				245B4F6F1BBA52DE00C53CC3 /* EBankViewController.m in Sources */,
+				2467DE3F1BC768F40026BB86 /* BankCardCell.m in Sources */,
 				248794C51BB9413900B9E930 /* MKAnnotationView+WebCache.m in Sources */,
 				245B4F7D1BBA537A00C53CC3 /* PayServiceViewController.m in Sources */,
 				247E3BE81BBBC5A200829561 /* UIViewController+tap.m in Sources */,
