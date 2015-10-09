@@ -9,6 +9,7 @@
 #import "BankCardViewController.h"
 #import "BankCardCell.h"
 #import "BankCardList.h"
+#import "BankCardDetailView.h"
 
 static NSString * const KCELLID = @"KCELLID";
 static NSString * const KHEADID = @"KHEADID";
@@ -83,7 +84,15 @@ static NSString * const KHEADID = @"KHEADID";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    BankCardDetailView * detailView = [[BankCardDetailView alloc] init];
+    detailView.titleLabel.text = _dataSource[@"productName"][indexPath.row];
+    detailView.detailContentLabel.text = _dataSource[@"summary"][indexPath.row];
+    [detailView.detailContentLabel sizeToFit];
+    [detailView.detailImg sd_setImageWithURL:[NSURL URLWithString:_dataSource[@"img"][indexPath.row]] placeholderImage:IMAGE_CONTENT(@"默认图.png")];
+    [self.view addSubview:detailView];
+    [UIView animateWithDuration:1.0 animations:^{
+        detailView.frame = CGRectMake(0, 84, 690, 910);
+    }];
 }
 
 

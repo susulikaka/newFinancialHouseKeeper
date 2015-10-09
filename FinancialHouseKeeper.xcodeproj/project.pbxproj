@@ -19,6 +19,8 @@
 		245B4F8D1BBA56BF00C53CC3 /* FinConsultionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B4F8C1BBA56BF00C53CC3 /* FinConsultionViewController.m */; };
 		245B4F911BBA97F800C53CC3 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B4F901BBA97F800C53CC3 /* UserModel.m */; };
 		245B761C1BC7821200DB9066 /* BankCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B761B1BC7821200DB9066 /* BankCardViewController.m */; };
+		245B76221BC7A13C00DB9066 /* BankCardDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B76211BC7A13C00DB9066 /* BankCardDetailView.m */; };
+		245B762A1BC7B75C00DB9066 /* applyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B76291BC7B75C00DB9066 /* applyView.m */; };
 		2467DE3C1BC75B7E0026BB86 /* BankCardList.m in Sources */ = {isa = PBXBuildFile; fileRef = 2467DE3B1BC75B7E0026BB86 /* BankCardList.m */; };
 		2467DE3F1BC768F40026BB86 /* BankCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2467DE3E1BC768F40026BB86 /* BankCardCell.m */; };
 		247E3BE41BBBA35300829561 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 247E3BE31BBBA35300829561 /* LoginView.m */; };
@@ -567,6 +569,10 @@
 		245B4F901BBA97F800C53CC3 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		245B761A1BC7821200DB9066 /* BankCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCardViewController.h; sourceTree = "<group>"; };
 		245B761B1BC7821200DB9066 /* BankCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCardViewController.m; sourceTree = "<group>"; };
+		245B76201BC7A13C00DB9066 /* BankCardDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCardDetailView.h; sourceTree = "<group>"; };
+		245B76211BC7A13C00DB9066 /* BankCardDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCardDetailView.m; sourceTree = "<group>"; };
+		245B76281BC7B75C00DB9066 /* applyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = applyView.h; sourceTree = "<group>"; };
+		245B76291BC7B75C00DB9066 /* applyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = applyView.m; sourceTree = "<group>"; };
 		2467DE3A1BC75B7E0026BB86 /* BankCardList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCardList.h; sourceTree = "<group>"; };
 		2467DE3B1BC75B7E0026BB86 /* BankCardList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCardList.m; sourceTree = "<group>"; };
 		2467DE3D1BC768F40026BB86 /* BankCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCardCell.h; sourceTree = "<group>"; };
@@ -1169,6 +1175,15 @@
 			path = userModel;
 			sourceTree = "<group>";
 		};
+		245B76271BC7B68600DB9066 /* 申请界面 */ = {
+			isa = PBXGroup;
+			children = (
+				245B76281BC7B75C00DB9066 /* applyView.h */,
+				245B76291BC7B75C00DB9066 /* applyView.m */,
+			);
+			path = "申请界面";
+			sourceTree = "<group>";
+		};
 		2467DE391BC75B680026BB86 /* bankCardList */ = {
 			isa = PBXGroup;
 			children = (
@@ -1181,6 +1196,8 @@
 		2467DE401BC77E300026BB86 /* 详情 */ = {
 			isa = PBXGroup;
 			children = (
+				245B76201BC7A13C00DB9066 /* BankCardDetailView.h */,
+				245B76211BC7A13C00DB9066 /* BankCardDetailView.m */,
 			);
 			path = "详情";
 			sourceTree = "<group>";
@@ -1858,6 +1875,7 @@
 		248790C31BB926AF00B9E930 /* 银行卡 */ = {
 			isa = PBXGroup;
 			children = (
+				245B76271BC7B68600DB9066 /* 申请界面 */,
 				2467DE401BC77E300026BB86 /* 详情 */,
 				2467DE3D1BC768F40026BB86 /* BankCardCell.h */,
 				2467DE3E1BC768F40026BB86 /* BankCardCell.m */,
@@ -2629,7 +2647,9 @@
 				248790941BB9228700B9E930 /* AppDelegate.m in Sources */,
 				248794BD1BB9413900B9E930 /* AFNetworkReachabilityManager.m in Sources */,
 				248794D01BB9413900B9E930 /* UIImage+MultiFormat.m in Sources */,
+				245B762A1BC7B75C00DB9066 /* applyView.m in Sources */,
 				245B4F801BBA538300C53CC3 /* ConfigViewController.m in Sources */,
+				245B76221BC7A13C00DB9066 /* BankCardDetailView.m in Sources */,
 				248794D11BB9413900B9E930 /* UIImage+WebP.m in Sources */,
 				2467DE3C1BC75B7E0026BB86 /* BankCardList.m in Sources */,
 				248794751BB92D2D00B9E930 /* FunctionList.m in Sources */,
