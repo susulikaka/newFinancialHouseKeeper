@@ -21,6 +21,10 @@
 		245B761C1BC7821200DB9066 /* BankCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B761B1BC7821200DB9066 /* BankCardViewController.m */; };
 		245B76221BC7A13C00DB9066 /* BankCardDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B76211BC7A13C00DB9066 /* BankCardDetailView.m */; };
 		245B762A1BC7B75C00DB9066 /* applyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B76291BC7B75C00DB9066 /* applyView.m */; };
+		245B76311BC7C01800DB9066 /* PersonalInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B76301BC7C01800DB9066 /* PersonalInfoView.m */; };
+		245B76341BC7C02700DB9066 /* ContactsInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B76331BC7C02700DB9066 /* ContactsInfoView.m */; };
+		245B76371BC7C02F00DB9066 /* OthersInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B76361BC7C02F00DB9066 /* OthersInfoView.m */; };
+		245B763A1BC7C03A00DB9066 /* ProfessionInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 245B76391BC7C03A00DB9066 /* ProfessionInfoView.m */; };
 		2467DE3C1BC75B7E0026BB86 /* BankCardList.m in Sources */ = {isa = PBXBuildFile; fileRef = 2467DE3B1BC75B7E0026BB86 /* BankCardList.m */; };
 		2467DE3F1BC768F40026BB86 /* BankCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2467DE3E1BC768F40026BB86 /* BankCardCell.m */; };
 		247E3BE41BBBA35300829561 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 247E3BE31BBBA35300829561 /* LoginView.m */; };
@@ -573,6 +577,14 @@
 		245B76211BC7A13C00DB9066 /* BankCardDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCardDetailView.m; sourceTree = "<group>"; };
 		245B76281BC7B75C00DB9066 /* applyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = applyView.h; sourceTree = "<group>"; };
 		245B76291BC7B75C00DB9066 /* applyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = applyView.m; sourceTree = "<group>"; };
+		245B762F1BC7C01800DB9066 /* PersonalInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalInfoView.h; sourceTree = "<group>"; };
+		245B76301BC7C01800DB9066 /* PersonalInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoView.m; sourceTree = "<group>"; };
+		245B76321BC7C02700DB9066 /* ContactsInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsInfoView.h; sourceTree = "<group>"; };
+		245B76331BC7C02700DB9066 /* ContactsInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsInfoView.m; sourceTree = "<group>"; };
+		245B76351BC7C02F00DB9066 /* OthersInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OthersInfoView.h; sourceTree = "<group>"; };
+		245B76361BC7C02F00DB9066 /* OthersInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OthersInfoView.m; sourceTree = "<group>"; };
+		245B76381BC7C03A00DB9066 /* ProfessionInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfessionInfoView.h; sourceTree = "<group>"; };
+		245B76391BC7C03A00DB9066 /* ProfessionInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfessionInfoView.m; sourceTree = "<group>"; };
 		2467DE3A1BC75B7E0026BB86 /* BankCardList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCardList.h; sourceTree = "<group>"; };
 		2467DE3B1BC75B7E0026BB86 /* BankCardList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCardList.m; sourceTree = "<group>"; };
 		2467DE3D1BC768F40026BB86 /* BankCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCardCell.h; sourceTree = "<group>"; };
@@ -1178,10 +1190,50 @@
 		245B76271BC7B68600DB9066 /* 申请界面 */ = {
 			isa = PBXGroup;
 			children = (
+				245B762B1BC7BFFF00DB9066 /* 个人资料 */,
+				245B762C1BC7BFFF00DB9066 /* 联系人资料 */,
+				245B762D1BC7BFFF00DB9066 /* 其他资料 */,
+				245B762E1BC7BFFF00DB9066 /* 职业资料 */,
 				245B76281BC7B75C00DB9066 /* applyView.h */,
 				245B76291BC7B75C00DB9066 /* applyView.m */,
 			);
 			path = "申请界面";
+			sourceTree = "<group>";
+		};
+		245B762B1BC7BFFF00DB9066 /* 个人资料 */ = {
+			isa = PBXGroup;
+			children = (
+				245B762F1BC7C01800DB9066 /* PersonalInfoView.h */,
+				245B76301BC7C01800DB9066 /* PersonalInfoView.m */,
+			);
+			path = "个人资料";
+			sourceTree = "<group>";
+		};
+		245B762C1BC7BFFF00DB9066 /* 联系人资料 */ = {
+			isa = PBXGroup;
+			children = (
+				245B76321BC7C02700DB9066 /* ContactsInfoView.h */,
+				245B76331BC7C02700DB9066 /* ContactsInfoView.m */,
+			);
+			path = "联系人资料";
+			sourceTree = "<group>";
+		};
+		245B762D1BC7BFFF00DB9066 /* 其他资料 */ = {
+			isa = PBXGroup;
+			children = (
+				245B76351BC7C02F00DB9066 /* OthersInfoView.h */,
+				245B76361BC7C02F00DB9066 /* OthersInfoView.m */,
+			);
+			path = "其他资料";
+			sourceTree = "<group>";
+		};
+		245B762E1BC7BFFF00DB9066 /* 职业资料 */ = {
+			isa = PBXGroup;
+			children = (
+				245B76381BC7C03A00DB9066 /* ProfessionInfoView.h */,
+				245B76391BC7C03A00DB9066 /* ProfessionInfoView.m */,
+			);
+			path = "职业资料";
 			sourceTree = "<group>";
 		};
 		2467DE391BC75B680026BB86 /* bankCardList */ = {
@@ -2651,12 +2703,14 @@
 				245B4F801BBA538300C53CC3 /* ConfigViewController.m in Sources */,
 				245B76221BC7A13C00DB9066 /* BankCardDetailView.m in Sources */,
 				248794D11BB9413900B9E930 /* UIImage+WebP.m in Sources */,
+				245B76341BC7C02700DB9066 /* ContactsInfoView.m in Sources */,
 				2467DE3C1BC75B7E0026BB86 /* BankCardList.m in Sources */,
 				248794751BB92D2D00B9E930 /* FunctionList.m in Sources */,
 				248794BF1BB9413900B9E930 /* AFURLConnectionOperation.m in Sources */,
 				248794D31BB9413900B9E930 /* UIImageView+WebCache.m in Sources */,
 				248794BC1BB9413900B9E930 /* AFHTTPSessionManager.m in Sources */,
 				245B4F721BBA52FC00C53CC3 /* ScheAlertViewController.m in Sources */,
+				245B763A1BC7C03A00DB9066 /* ProfessionInfoView.m in Sources */,
 				24E903061BC60097003999B6 /* StartView.m in Sources */,
 				248794C01BB9413900B9E930 /* AFURLRequestSerialization.m in Sources */,
 				245B4F691BBA52AD00C53CC3 /* BusConsultionViewController.m in Sources */,
@@ -2670,6 +2724,7 @@
 				248794C61BB9413900B9E930 /* NSData+ImageContentType.m in Sources */,
 				248794DB1BB9424B00B9E930 /* NetworkRequest.m in Sources */,
 				248794BB1BB9413900B9E930 /* AFHTTPRequestOperationManager.m in Sources */,
+				245B76311BC7C01800DB9066 /* PersonalInfoView.m in Sources */,
 				245B4F781BBA534000C53CC3 /* MonServiceViewController.m in Sources */,
 				248794BE1BB9413900B9E930 /* AFSecurityPolicy.m in Sources */,
 				248794CC1BB9413900B9E930 /* SDWebImageManager.m in Sources */,
@@ -2683,6 +2738,7 @@
 				245B4F6F1BBA52DE00C53CC3 /* EBankViewController.m in Sources */,
 				2467DE3F1BC768F40026BB86 /* BankCardCell.m in Sources */,
 				248794C51BB9413900B9E930 /* MKAnnotationView+WebCache.m in Sources */,
+				245B76371BC7C02F00DB9066 /* OthersInfoView.m in Sources */,
 				245B4F7D1BBA537A00C53CC3 /* PayServiceViewController.m in Sources */,
 				247E3BE81BBBC5A200829561 /* UIViewController+tap.m in Sources */,
 				248794C81BB9413900B9E930 /* SDWebImageCompat.m in Sources */,

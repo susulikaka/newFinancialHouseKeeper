@@ -16,5 +16,6 @@
 @property(nonatomic,strong) UIButton * contactsInfo;/** < 联系人资料 */
 @property(nonatomic,strong) UIButton * otherInfo;/** < 其他资料 */
 
-
+@property(nonatomic,strong) UIButton * nextBtn;/** < 下一步按钮 */
+@property(nonatomic,strong) UIButton * lastBtn;/** < 完成按钮 */
 @end
