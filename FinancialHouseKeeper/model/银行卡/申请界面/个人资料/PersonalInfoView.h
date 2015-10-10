@@ -10,4 +10,7 @@
 
 @interface PersonalInfoView : UIView
 
+
+@property(nonatomic,assign) BOOL isAllDone;/** < 是否全部填写完成 */
+
 @end
