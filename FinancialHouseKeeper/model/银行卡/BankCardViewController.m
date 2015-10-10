@@ -14,15 +14,16 @@
 static NSString * const KCELLID = @"KCELLID";
 static NSString * const KHEADID = @"KHEADID";
 
-@interface BankCardViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface BankCardViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchControllerDelegate,UISearchResultsUpdating>
 {
     __block NSDictionary * _dataSource;
     BankCardList * _request;
+    __block NSArray * _searchArr;
 }
 
 @property(nonatomic,strong) UITableView * cardTableView;/** < 银行卡 */
 @property(nonatomic,strong) UIButton * collectionBtn;/** < 收藏按钮 */
-@property(nonatomic,strong) UISearchBar * searchBar;/** < 搜索 */
+@property(nonatomic,strong) UISearchController * searchBar;/** < 搜索 */
 
 -(void)initBankCardInterface;
 -(void)initBankCardDataSource;
@@ -52,6 +53,28 @@ static NSString * const KHEADID = @"KHEADID";
     [self.view addSubview:self.cardTableView];
 }
 
+#pragma mark - UISearchBarDelegate
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController{
+    
+    if (!self.searchBar.active) {
+        [self initBankCardDataSource];
+    }
+    
+    __block NSArray * result = [NSArray array];
+    
+    [_request searchCardByName:self.searchBar.searchBar.text :^(NSArray *list) {
+        _searchArr = [NSArray array];
+        _searchArr = [list copy];
+        /** < 遍历数据源得到 */
+        result = _dataSource[@"productName"];
+        
+        [result enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            
+        }];
+        
+    }];
+}
+
 
 #pragma mark - <UITableViewDataSource,UITableViewDelegate>
 
@@ -78,7 +101,7 @@ static NSString * const KHEADID = @"KHEADID";
     }
     
     [view addSubview:self.collectionBtn];
-    [view addSubview:self.searchBar];
+    [view addSubview:self.searchBar.searchBar];
     view.contentView.backgroundColor = self.view.backgroundColor;
     return view;
 }
@@ -120,12 +143,17 @@ static NSString * const KHEADID = @"KHEADID";
     return _collectionBtn;
 }
 
-- (UISearchBar *)searchBar{
+- (UISearchController *)searchBar{
     if (!_searchBar) {
         _searchBar = ({
-            UISearchBar * bar =  [[UISearchBar alloc] initWithFrame:CGRectMake(290, 15, 300, 30)];
-            [bar setSearchFieldBackgroundImage:IMAGE_CONTENT(@"搜索框.png") forState:UIControlStateNormal];
-            bar.placeholder = @"请输入名称或者编号";
+            UISearchController * bar =  [[UISearchController alloc] initWithSearchResultsController:nil];
+            [bar.searchBar setFrame:CGRectMake(290, 15, 300, 30)];
+//            [bar setSearchFieldBackgroundImage:IMAGE_CONTENT(@"搜索框.png") forState:UIControlStateNormal];
+//            bar.placeholder = @"请输入名称或者编号";
+            bar.delegate = self;
+            bar.hidesNavigationBarDuringPresentation = YES;
+            bar.dimsBackgroundDuringPresentation = NO;
+            bar.searchResultsUpdater = self;
             bar;
         });
     }

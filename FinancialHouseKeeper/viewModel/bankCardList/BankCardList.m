@@ -10,6 +10,7 @@
 
 typedef cardListBlock cardList;
 
+
 @interface BankCardList ()
 
 @property(nonatomic,strong)NetworkRequest * request;
@@ -20,7 +21,34 @@ typedef cardListBlock cardList;
 
 @implementation BankCardList
 
+- (void)searchCardByName:(NSString *)name :(void (^)(NSArray *))listBlock{
+    self.searchList = listBlock;
+    NSDictionary * params = @{@"searcherType":@"0",
+                              @"startNum":@"0",
+                              @"pageSize":@"10",
+                              @"typeCode":@"5",
+                              @"insutype":@"",
+                              @"insudetailtype":@"",
+                              @"insuid":@"",
+                              @"fundtype":@"",
+                              @"comName":@"",
+                              @"currtype":@"",
+                              @"proDrate":@"",
+                              @"validTime":@"",
+                              @"risklevel":@"",
+                              @"proName":name,
+                              @"typeId":@""};
+    
+    [self.request post:PRODUCT_INFO_NAME_URL parameters:params successHandle:^(NSString *responds) {
+        self.searchArr = [NSMutableArray arrayWithCapacity:0];
+        self.searchArr = [responds copy];
+    } failureHandle:^(NSError *error) {
+        
+    }]; 
+}
 
+
+/** < 得到银行卡列表 */
 - (void)getCardDic:(void (^)(NSDictionary *))listBlock{
     self.cardList = listBlock;
     self.cardDic = [NSMutableDictionary dictionary];
@@ -48,7 +76,7 @@ typedef cardListBlock cardList;
         
     }];
 }
-
+/** < 修改图片的地址 */
 - (NSString *)modificationImageUrlAddressWithUrl:(NSString *)url {
     if (!url) {
         return nil;
@@ -56,7 +84,7 @@ typedef cardListBlock cardList;
     NSString *newUrl = [url stringByReplacingOccurrencesOfString:@"http://127.0.0.1:8081/icbcfile/a/" withString:@"http://125.70.10.34:1234/icbc/"];
     return newUrl;
 }
-
+/** < 得到图片 */
 - (UIImageView *)viewsLoadData:(NSString *)datas {
     UIImageView *imageView = [[UIImageView alloc] init];
 

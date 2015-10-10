@@ -58,6 +58,7 @@
         
     }];
     if (self.alert.alpha == 0) {
+        self.alert.alpha = 1;
         [self.alert show];
     }
 }
