@@ -22,4 +22,9 @@
     self.backgroundColor = [UIColor cyanColor];
     self.frame = CGRectMake(0, 0, 600, 750);
 }
+
+- (void)removeFromSuperview{
+    [super removeFromSuperview];
+    NSLog(@"hehe");
+}
 @end
