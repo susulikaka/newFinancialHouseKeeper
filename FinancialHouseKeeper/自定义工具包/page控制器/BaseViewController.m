@@ -58,6 +58,7 @@
         _firstButton = ({
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
             button.frame = CGRectMake(215, 25, 100, 35);
+            button.tag = 1000;
             button;
         });
     }
@@ -69,6 +70,7 @@
         _secondButton = ({
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
             button.frame = CGRectMake(328, 25, 100, 35);
+            button.tag = 1001;
             button;
         });
     }
@@ -80,6 +82,7 @@
         _thirdButton = ({
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
             button.frame = CGRectMake(441, 25, 100, 35);
+            button.tag = 1002;
             button;
         });
     }
@@ -91,6 +94,7 @@
         _fourthButton = ({
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
             button.frame = CGRectMake(554, 25, 100, 35);
+            button.tag = 1003;
             button;
         });
     }
