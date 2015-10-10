@@ -37,16 +37,11 @@
     [self addSubview:self.idCard];
     [self addSubview:self.phone];
     
-    self.alert = [[UIAlertView alloc] initWithTitle:@"" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    self.alert = [[UIAlertView alloc] initWithTitle:@"填写未完成" message:@"您确定要关闭当前页面吗？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
 }
 
 #pragma mark - 创建信号
 -(void)creatSignal{
-    
-    
-    
-    
-    
     
     RACSignal * nameSignal = [self.name rac_textSignal];
     RACSignal * idCardSiganl = [self.idCard rac_textSignal];
@@ -55,15 +50,16 @@
 //     @weakify(self);
     RAC(self.alert,alpha) = [RACSignal combineLatest:@[nameSignal,idCardSiganl,phoneSignal] reduce:^id(NSString * name,NSString * idCard,NSString * phone){
         if (name.length == 0 && idCard.length == 0 && phone.length == 0) {
-            [self.alert show];
+            
+            return @(0);
+        }else{
+            return @(0);
         }
-        return @(0);
+        
     }];
-    
-//    RACSignal * sig = self.alert.rac_willDismissSignal;
-    
-    
-    
+    if (self.alert.alpha == 0) {
+        [self.alert show];
+    }
 }
 
 #pragma mark - 移除时发送信号发送信号
