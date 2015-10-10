@@ -38,7 +38,7 @@ typedef listBlock listBlock;
 }
 
 - (void)getBeLogFunList:(void (^)(NSArray * list))listBlock{
-    self.beLogfunArr = @[@"首页",@"金融资讯",@"理财服务",@"银行卡",@"代理产品",@"我的网银"];
+    self.beLogfunArr = @[@"首页",@"金融资讯",@"理财服务",@"代理产品",@"我的网银"];
     self.list = listBlock;
     self.list(self.beLogfunArr);
 }

@@ -22,7 +22,6 @@
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
 //    LockerViewController * locker_vc = [[LockerViewController alloc] init];
     _window.rootViewController = [[VCManager sharedManager] root_vc];
-    [UserModel saveLoginState:NO];
     [_window makeKeyAndVisible];
     return YES;
 }

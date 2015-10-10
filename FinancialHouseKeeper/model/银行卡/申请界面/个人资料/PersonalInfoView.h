@@ -1,5 +1,5 @@
 //
-//  BankCardViewController.h
+//  PersonalInfoView.h
 //  FinancialHouseKeeper
 //
 //  Created by rimi on 15/10/9.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BankCardViewController : BaseViewController
+@interface PersonalInfoView : UIView
 
 @end
