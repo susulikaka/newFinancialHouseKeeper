@@ -12,9 +12,17 @@
 #import "OthersInfoView.h"
 #import "ProfessionInfoView.h"
 
+enum{
+    TPersonalTag = 100,
+    TProfessionTag,
+    TContactsTag,
+    TOtherTag
+};
+
 @interface applyView ()
 {
     NSInteger _curPageIndex;/** < 当前页面索引 */
+    NSArray * _viewArr;/** < 页面名称数组 */
 }
 @property(nonatomic,strong) PersonalInfoView * personal ;
 @property(nonatomic,strong) ContactsInfoView * contacts;
@@ -49,7 +57,9 @@
     /** < 默认是第一页 */
     [self addSubview:self.personal];
     /** < 使当前页面为第一页的索引 */
-    _curPageIndex = 1;
+    _curPageIndex = 0;
+    /** < 将页面的名称存入数组 */
+    _viewArr = @[@"action_personalInfo:",@"action_professionInfo",@"action_contactsInfo",@"action_otherInfo"];
     
     [self.personalInfo addTarget:self action:@selector(action_personalInfo:) forControlEvents:UIControlEventTouchUpInside];
     [self.professionInfo addTarget:self action:@selector(action_professionInfo) forControlEvents:UIControlEventTouchUpInside];
@@ -69,11 +79,37 @@
  */
 
 -(void)action_last{
-    
+    /**
+     *  而使用 [someController performSelector: NSSelectorFromString(@"someMethod")]; 时ARC并不知道该方法的返回值是什么，以及该如何处理？该忽略？
+     *
+     *  解决办法
+     
+     1.使用函数指针方式
+     *
+     2.使用宏忽略警告
+     */
+    SEL curMethod = NSSelectorFromString(_viewArr[-- _curPageIndex]);
+    IMP imp = [self methodForSelector:curMethod];
+    void(*func)(id,SEL) = (void *)imp;
+    func(self,curMethod);
+//    if([self respondsToSelector:curMethod])
+//    {
+//        [self performSelector:curMethod]; //如果有两个参数,使用两个withObject:参数;
+//    }
 }
 
 -(void)action_next{
-    
+    if (_curPageIndex >= 3 ) {
+        // 完成的弹框
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"完成" message:@"已是最后一页" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
+        [alert show];
+        return;
+        
+    }
+    SEL curMethod = NSSelectorFromString(_viewArr[++_curPageIndex]);
+    IMP imp = [self methodForSelector:curMethod];
+    void(*func)(id,SEL) = (void *)imp;
+    func(self,curMethod);
 }
 
 /**
@@ -83,7 +119,7 @@
  */
 /** < 各个页面跳转之前需要判断填入内容是否完整 */
 -(void)action_personalInfo:(UIButton * )sender{
-    _curPageIndex = 1;
+    _curPageIndex = 0;
     /** < 首先隐藏上一步按钮 */
     if (self.lastBtn.superview) {
         self.lastBtn.hidden = YES;
@@ -98,7 +134,7 @@
 }
 
 -(void)action_professionInfo{
-    _curPageIndex = 2;
+    _curPageIndex = 1;
     self.lastBtn.hidden = NO;
     if (self.subviews.count >= 7) {
         [self.subviews[6] removeFromSuperview];
@@ -107,7 +143,7 @@
 }
 
 -(void)action_contactsInfo{
-    _curPageIndex = 3;
+    _curPageIndex = 2;
     self.lastBtn.hidden = NO;
     if (self.subviews.count >= 7) {
         [self.subviews[6] removeFromSuperview];
@@ -116,7 +152,7 @@
 }
 
 -(void)action_otherInfo{
-    _curPageIndex = 4;
+    _curPageIndex = 3;
     self.lastBtn.hidden = NO;
     if (self.subviews.count >= 7) {
         [self.subviews[6] removeFromSuperview];
@@ -172,6 +208,7 @@
             UIButton * img = [[UIButton alloc] initWithFrame:CGRectMake(610, 420, 55, 155)];
             [img setImage:IMAGE_CONTENT(@"选中 其他资料.png") forState:UIControlStateSelected];
             [img setImage:IMAGE_CONTENT(@"未选中 其它资料.png") forState:UIControlStateNormal];
+            img.tag = TOtherTag;
             img;
         });
     }
@@ -182,8 +219,9 @@
     if (!_contactsInfo) {
         _contactsInfo = ({
             UIButton * img = [[UIButton alloc] initWithFrame:CGRectMake(610,300, 55, 155)];
-            [img setImage:IMAGE_CONTENT(@"选中 联系人资料.png") forState:UIControlStateSelected];
             [img setImage:IMAGE_CONTENT(@"未选中 联系人资料.png") forState:UIControlStateNormal];
+            [img setImage:IMAGE_CONTENT(@"选中 联系人资料.png") forState:UIControlStateSelected];
+            img.tag = TContactsTag;
             img;
         });
     }
@@ -197,6 +235,7 @@
             UIButton * img = [[UIButton alloc] initWithFrame:CGRectMake(610,180, 55, 155)];
             [img setImage:IMAGE_CONTENT(@"选中 职业资料.png") forState:UIControlStateSelected];
             [img setImage:IMAGE_CONTENT(@"未选中 职业资料.png") forState:UIControlStateNormal];
+            img.tag = TProfessionTag;
             img;
         });
     }
@@ -209,6 +248,7 @@
             UIButton * img = [[UIButton alloc] initWithFrame:CGRectMake(610,60, 55, 155)];
             [img setImage:IMAGE_CONTENT(@"选中 个人资料.png") forState:UIControlStateSelected];
             [img setImage:IMAGE_CONTENT(@"未选中 个人资料.png") forState:UIControlStateNormal];
+            img.tag = TPersonalTag;
             img;
         });
     }
