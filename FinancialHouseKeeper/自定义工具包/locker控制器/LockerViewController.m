@@ -134,7 +134,7 @@ static NSString * KListTableFootId = @"KListTableFootId";
 //登录或者登出
 - (void)action_login {
     if ([UserModel isLogin]) {
-        //弹框登出
+        //弹框登出  
         [UserModel savePerId:@"0"];
         
         [self initLockerDatasource];

@@ -524,6 +524,10 @@
 		248794DC1BB9424B00B9E930 /* Parse.m in Sources */ = {isa = PBXBuildFile; fileRef = 248794DA1BB9424B00B9E930 /* Parse.m */; };
 		248794E81BB949A300B9E930 /* VCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 248794E71BB949A300B9E930 /* VCManager.m */; };
 		24B988201BBA2DCE00C55EF9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B9881F1BBA2DCE00C55EF9 /* BaseViewController.m */; };
+		24E3FCA31BC8AE4F009CFF28 /* DepositInterestRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E3FCA21BC8AE4F009CFF28 /* DepositInterestRateView.m */; };
+		24E3FCA61BC8AE87009CFF28 /* NearbyBranchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E3FCA51BC8AE87009CFF28 /* NearbyBranchView.m */; };
+		24E3FCA91BC8AED0009CFF28 /* InvestingAndFinancingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E3FCA81BC8AED0009CFF28 /* InvestingAndFinancingView.m */; };
+		24E3FCAC1BC8AF04009CFF28 /* ForeignExchangeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E3FCAB1BC8AF04009CFF28 /* ForeignExchangeView.m */; };
 		24E903061BC60097003999B6 /* StartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E903051BC60097003999B6 /* StartView.m */; };
 		24E903091BC609FF003999B6 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E903081BC609FF003999B6 /* HomePageViewController.m */; };
 		24E903101BC60B3C003999B6 /* NetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9030C1BC60B3C003999B6 /* NetworkingManager.m */; };
@@ -1115,6 +1119,14 @@
 		248794E71BB949A300B9E930 /* VCManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCManager.m; sourceTree = "<group>"; };
 		24B9881E1BBA2DCE00C55EF9 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		24B9881F1BBA2DCE00C55EF9 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		24E3FCA11BC8AE4F009CFF28 /* DepositInterestRateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DepositInterestRateView.h; sourceTree = "<group>"; };
+		24E3FCA21BC8AE4F009CFF28 /* DepositInterestRateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DepositInterestRateView.m; sourceTree = "<group>"; };
+		24E3FCA41BC8AE87009CFF28 /* NearbyBranchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyBranchView.h; sourceTree = "<group>"; };
+		24E3FCA51BC8AE87009CFF28 /* NearbyBranchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyBranchView.m; sourceTree = "<group>"; };
+		24E3FCA71BC8AED0009CFF28 /* InvestingAndFinancingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvestingAndFinancingView.h; sourceTree = "<group>"; };
+		24E3FCA81BC8AED0009CFF28 /* InvestingAndFinancingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvestingAndFinancingView.m; sourceTree = "<group>"; };
+		24E3FCAA1BC8AF04009CFF28 /* ForeignExchangeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForeignExchangeView.h; sourceTree = "<group>"; };
+		24E3FCAB1BC8AF04009CFF28 /* ForeignExchangeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForeignExchangeView.m; sourceTree = "<group>"; };
 		24E903041BC60097003999B6 /* StartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartView.h; sourceTree = "<group>"; };
 		24E903051BC60097003999B6 /* StartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartView.m; sourceTree = "<group>"; };
 		24E903071BC609FF003999B6 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
@@ -1148,6 +1160,10 @@
 		245B4F8A1BBA56BF00C53CC3 /* 金融资讯 */ = {
 			isa = PBXGroup;
 			children = (
+				24E3FC9D1BC8AC93009CFF28 /* 存款利率 */,
+				24E3FC9E1BC8AC93009CFF28 /* 附近网点 */,
+				24E3FC9F1BC8AC93009CFF28 /* 投资理财 */,
+				24E3FCA01BC8AC93009CFF28 /* 外汇贵金属 */,
 				245B4F8B1BBA56BF00C53CC3 /* FinConsultionViewController.h */,
 				245B4F8C1BBA56BF00C53CC3 /* FinConsultionViewController.m */,
 			);
@@ -1993,6 +2009,42 @@
 			path = "page控制器";
 			sourceTree = "<group>";
 		};
+		24E3FC9D1BC8AC93009CFF28 /* 存款利率 */ = {
+			isa = PBXGroup;
+			children = (
+				24E3FCA11BC8AE4F009CFF28 /* DepositInterestRateView.h */,
+				24E3FCA21BC8AE4F009CFF28 /* DepositInterestRateView.m */,
+			);
+			path = "存款利率";
+			sourceTree = "<group>";
+		};
+		24E3FC9E1BC8AC93009CFF28 /* 附近网点 */ = {
+			isa = PBXGroup;
+			children = (
+				24E3FCA41BC8AE87009CFF28 /* NearbyBranchView.h */,
+				24E3FCA51BC8AE87009CFF28 /* NearbyBranchView.m */,
+			);
+			path = "附近网点";
+			sourceTree = "<group>";
+		};
+		24E3FC9F1BC8AC93009CFF28 /* 投资理财 */ = {
+			isa = PBXGroup;
+			children = (
+				24E3FCA71BC8AED0009CFF28 /* InvestingAndFinancingView.h */,
+				24E3FCA81BC8AED0009CFF28 /* InvestingAndFinancingView.m */,
+			);
+			path = "投资理财";
+			sourceTree = "<group>";
+		};
+		24E3FCA01BC8AC93009CFF28 /* 外汇贵金属 */ = {
+			isa = PBXGroup;
+			children = (
+				24E3FCAA1BC8AF04009CFF28 /* ForeignExchangeView.h */,
+				24E3FCAB1BC8AF04009CFF28 /* ForeignExchangeView.m */,
+			);
+			path = "外汇贵金属";
+			sourceTree = "<group>";
+		};
 		24E903031BC60035003999B6 /* 启动页 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2596,6 +2648,7 @@
 				248794C21BB9413900B9E930 /* AFURLSessionManager.m in Sources */,
 				248790971BB9228700B9E930 /* ViewController.m in Sources */,
 				245B4F751BBA532700C53CC3 /* ActiComunicationViewController.m in Sources */,
+				24E3FCAC1BC8AF04009CFF28 /* ForeignExchangeView.m in Sources */,
 				248794CD1BB9413900B9E930 /* SDWebImagePrefetcher.m in Sources */,
 				248794D41BB9413900B9E930 /* UIView+WebCacheOperation.m in Sources */,
 				24E903091BC609FF003999B6 /* HomePageViewController.m in Sources */,
@@ -2608,6 +2661,7 @@
 				248794751BB92D2D00B9E930 /* FunctionList.m in Sources */,
 				248794BF1BB9413900B9E930 /* AFURLConnectionOperation.m in Sources */,
 				248794D31BB9413900B9E930 /* UIImageView+WebCache.m in Sources */,
+				24E3FCA31BC8AE4F009CFF28 /* DepositInterestRateView.m in Sources */,
 				248794BC1BB9413900B9E930 /* AFHTTPSessionManager.m in Sources */,
 				245B4F721BBA52FC00C53CC3 /* ScheAlertViewController.m in Sources */,
 				24E903061BC60097003999B6 /* StartView.m in Sources */,
@@ -2618,6 +2672,7 @@
 				247E3BE41BBBA35300829561 /* LoginView.m in Sources */,
 				2487947A1BB92D7D00B9E930 /* LockerViewController.m in Sources */,
 				248794C41BB9413900B9E930 /* GDataXMLNode.m in Sources */,
+				24E3FCA61BC8AE87009CFF28 /* NearbyBranchView.m in Sources */,
 				248794E81BB949A300B9E930 /* VCManager.m in Sources */,
 				248790911BB9228700B9E930 /* main.m in Sources */,
 				248794C61BB9413900B9E930 /* NSData+ImageContentType.m in Sources */,
@@ -2642,6 +2697,7 @@
 				248794D21BB9413900B9E930 /* UIImageView+HighlightedWebCache.m in Sources */,
 				248794CF1BB9413900B9E930 /* UIImage+GIF.m in Sources */,
 				248794C71BB9413900B9E930 /* SDImageCache.m in Sources */,
+				24E3FCA91BC8AED0009CFF28 /* InvestingAndFinancingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
