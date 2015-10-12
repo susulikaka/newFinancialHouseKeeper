@@ -47,21 +47,25 @@
     RACSignal * idCardSiganl = [self.idCard rac_textSignal];
     RACSignal * phoneSignal = [self.phone rac_textSignal];
     
-//     @weakify(self);
-    RAC(self.alert,alpha) = [RACSignal combineLatest:@[nameSignal,idCardSiganl,phoneSignal] reduce:^id(NSString * name,NSString * idCard,NSString * phone){
-        if (name.length == 0 && idCard.length == 0 && phone.length == 0) {
+    
+//    if (! RAC(self.alert,alpha)) {
+        RAC(self.alert,alpha) = [RACSignal combineLatest:@[nameSignal,idCardSiganl,phoneSignal] reduce:^id(NSString * name,NSString * idCard,NSString * phone){
+            if (name.length == 0 && idCard.length == 0 && phone.length == 0) {
+                
+                return @(0);
+            }else{
+                return @(0);
+            }
             
-            return @(0);
-        }else{
-            return @(0);
+        }];
+        if (self.alert.alpha == 0) {
+            self.alert.alpha = 1;
+            [self.alert show];
         }
-        
-    }];
-    if (self.alert.alpha == 0) {
-        self.alert.alpha = 1;
-        [self.alert show];
+
+//    }
+    
     }
-}
 
 #pragma mark - 移除时发送信号发送信号
 - (void)removeFromSuperview{

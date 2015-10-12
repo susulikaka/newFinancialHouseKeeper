@@ -51,6 +51,13 @@ static NSString * const KHEADID = @"KHEADID";
     self.firstButton.selected = YES;
     self.bankModelImageView.image = IMAGE_CONTENT(@"银行卡-logo.png");
     [self.view addSubview:self.cardTableView];
+    /** < 添加收藏列表 */
+    [self.collectionBtn addTarget:self action:@selector(action_collection) forControlEvents:UIControlEventTouchUpInside];
+}
+
+#pragma mark - action
+-(void)action_collection{
+    
 }
 
 #pragma mark - UISearchBarDelegate
