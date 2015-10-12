@@ -8,10 +8,16 @@
 
 #import "FinConsultionViewController.h"
 #import "DepositInterestRateView.h"
+#import "ForeignExchangeView.h"
+#import "InvestingAndFinancingView.h"
+#import "NearbyBranchView.h"
 
 @interface FinConsultionViewController ()
 
-@property (nonatomic, strong) DepositInterestRateView *depositInterestView; /**< 存款利率图片 */
+@property (nonatomic, strong) DepositInterestRateView *depositInterestView; /**< 存款利率view */
+@property (nonatomic, strong) ForeignExchangeView *foreignExchangeView; /**< 外汇利率view */
+@property (nonatomic, strong) InvestingAndFinancingView *investingAndFinancingView; /**< 投资理财View */
+@property (nonatomic, strong) NearbyBranchView *nearByView; /**< 附近网点view */
 
 -(void)initFinConsultInterface;
 @end
@@ -52,18 +58,29 @@
     sender.selected = YES;
     switch (sender.tag) {
         case 1000:
-            if (!self.depositInterestView) {
+            if (!self.depositInterestView.superview) {
+                [self.view.subviews.lastObject removeFromSuperview];
                 [self.view addSubview:self.depositInterestView];
             }
             break;
         case 1001:
-            
+            if (!self.foreignExchangeView.superview) {
+                [self.view.subviews.lastObject removeFromSuperview];
+                [self.view addSubview:self.foreignExchangeView];
+            }
             break;
         case 1002:
+            if (!self.investingAndFinancingView.superview) {
+                [self.view.subviews.lastObject removeFromSuperview];
+                [self.view addSubview:self.investingAndFinancingView];
+            }
             
             break;
         case 1003:
-            
+            if (!self.nearByView.superview) {
+                [self.view.subviews.lastObject removeFromSuperview];
+                [self.view addSubview:self.nearByView];
+            }
             break;
         default:
             break;
@@ -79,6 +96,36 @@
         });
     }
     return _depositInterestView;
+}
+
+- (ForeignExchangeView *)foreignExchangeView {
+    if (!_foreignExchangeView) {
+        _foreignExchangeView = ({
+            ForeignExchangeView *imageView = [[ForeignExchangeView alloc] initWithFrame:CGRectMake(0, 80, 708, 924)];
+            imageView;
+        });
+    }
+    return _foreignExchangeView;
+}
+
+- (NearbyBranchView *)nearByView {
+    if (!_nearByView) {
+        _nearByView = ({
+            NearbyBranchView *imageView = [[NearbyBranchView alloc] initWithFrame:CGRectMake(0, 80, 708, 924)];
+            imageView;
+        });
+    }
+    return _nearByView;
+}
+
+- (InvestingAndFinancingView *)investingAndFinancingView {
+    if (!_investingAndFinancingView) {
+        _investingAndFinancingView = ({
+            InvestingAndFinancingView *imageView = [[InvestingAndFinancingView alloc] initWithFrame:CGRectMake(0, 80, 708, 924)];
+            imageView;
+        });
+    }
+    return _investingAndFinancingView;
 }
 
 
