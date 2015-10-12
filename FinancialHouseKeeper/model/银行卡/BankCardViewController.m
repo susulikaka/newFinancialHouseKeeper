@@ -147,7 +147,7 @@ static NSString * const KHEADID = @"KHEADID";
     if (!_searchBar) {
         _searchBar = ({
             UISearchController * bar =  [[UISearchController alloc] initWithSearchResultsController:nil];
-            [bar.searchBar setFrame:CGRectMake(290, 15, 300, 30)];
+            bar.searchBar.frame = CGRectMake(290, 15, 300, 30);
 //            [bar setSearchFieldBackgroundImage:IMAGE_CONTENT(@"搜索框.png") forState:UIControlStateNormal];
 //            bar.placeholder = @"请输入名称或者编号";
             bar.delegate = self;
